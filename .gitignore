@@ -1,0 +1,80 @@
+# ============================================
+# Xcode / iOS
+# ============================================
+*.xcuserstate
+*.xcuserdatad/
+xcuserdata/
+*.xcworkspace/xcuserdata/
+DerivedData/
+build/
+*.hmap
+*.ipa
+*.dSYM.zip
+*.dSYM
+
+# Swift Package Manager
+.swiftpm/
+Packages/
+Package.pins
+Package.resolved
+
+# CocoaPods (falls genutzt)
+Pods/
+*.xcworkspace
+
+# Carthage (falls genutzt)
+Carthage/Build/
+Carthage/Checkouts
+
+# Fastlane (falls genutzt)
+fastlane/report.xml
+fastlane/Preview.html
+fastlane/screenshots/**/*.png
+fastlane/test_output
+
+# ============================================
+# Secrets / Lokale Konfiguration
+# ============================================
+*.pem
+*.p12
+*.cer
+.env
+.env.local
+.env.*.local
+secrets.plist
+ApiKeys.swift
+GoogleService-Info.plist
+
+# ============================================
+# macOS
+# ============================================
+.DS_Store
+.AppleDouble
+.LSOverride
+Icon?
+._*
+
+# ============================================
+# Editoren
+# ============================================
+.vscode/
+.idea/
+*.swp
+*.swo
+*~
+
+# ============================================
+# Node / Build-Tools (für Mockup-Scripts)
+# ============================================
+node_modules/
+npm-debug.log*
+yarn-debug.log*
+package-lock.json
+
+# ============================================
+# Office-Temporaries
+# ============================================
+~$*.docx
+~$*.xlsx
+~$*.pptx
+*.tmp

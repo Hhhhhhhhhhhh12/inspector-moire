@@ -1,0 +1,740 @@
+<!DOCTYPE html>
+<html lang="de">
+<head>
+<meta charset="UTF-8" />
+<meta name="viewport" content="width=device-width, initial-scale=1.0" />
+<title>Inspektor — UI Mockup</title>
+<style>
+  * { margin: 0; padding: 0; box-sizing: border-box; }
+  html, body { width: 100%; min-height: 100vh; font-family: -apple-system, BlinkMacSystemFont, "SF Pro Display", "Helvetica Neue", Arial, sans-serif; }
+  body {
+    background: radial-gradient(ellipse at 50% 0%, #0e1620 0%, #050810 70%);
+    color: #f5f7fa;
+    display: flex; flex-direction: column; align-items: center;
+    padding: 32px 16px 80px; min-height: 100vh;
+  }
+  /* --------- Header --------- */
+  .header { text-align: center; max-width: 880px; margin-bottom: 16px; }
+  .header h1 { font-size: 28px; font-weight: 700; letter-spacing: -0.5px; }
+  .header h1 .accent { color: #00d9ff; }
+  .header p { color: #7d8895; font-size: 14px; margin-top: 6px; }
+  .screen-label { color: #00d9ff; font-size: 12px; font-weight: 600; text-transform: uppercase; letter-spacing: 1.5px; margin: 18px 0 4px; }
+  .screen-caption { color: #aab2bc; font-size: 13px; max-width: 720px; text-align: center; line-height: 1.5; min-height: 38px; }
+
+  /* --------- Stage with devices --------- */
+  .stage {
+    display: flex; align-items: center; justify-content: center;
+    gap: 36px; margin: 24px 0; flex-wrap: wrap;
+  }
+
+  /* --------- iPhone frame --------- */
+  .iphone {
+    position: relative; width: 320px; height: 660px;
+    background: #050505; border-radius: 50px;
+    box-shadow: 0 30px 60px -10px rgba(0,0,0,0.7), inset 0 0 0 2px #1c1c1c, 0 0 0 9px #1a1a1a, 0 0 0 10px #2a2a2a;
+    padding: 12px; overflow: hidden;
+  }
+  .iphone-screen {
+    width: 100%; height: 100%; border-radius: 40px; overflow: hidden;
+    background: #0a0d12; position: relative; display: flex; flex-direction: column;
+  }
+  .dynamic-island {
+    position: absolute; top: 10px; left: 50%; transform: translateX(-50%);
+    width: 110px; height: 32px; background: #000; border-radius: 20px; z-index: 50;
+  }
+
+  /* --------- Watch frame --------- */
+  .watch {
+    position: relative; width: 200px; height: 244px;
+    background: #1a1a1a; border-radius: 50px;
+    box-shadow: 0 18px 36px -8px rgba(0,0,0,0.6), inset 0 0 0 2px #2a2a2a, 0 0 0 5px #333;
+    padding: 12px; display: flex; align-items: center; justify-content: center;
+  }
+  .watch::before {
+    content: ''; position: absolute; right: -10px; top: 36%;
+    width: 10px; height: 60px; background: linear-gradient(to right, #2a2a2a, #1a1a1a);
+    border-radius: 0 4px 4px 0;
+  }
+  .watch::after {
+    content: ''; position: absolute; right: -7px; top: 50%; transform: translateY(-50%);
+    width: 6px; height: 14px; background: #444; border-radius: 0 2px 2px 0;
+  }
+  .watch-screen {
+    width: 100%; height: 100%; border-radius: 38px; background: #000;
+    display: flex; flex-direction: column; padding: 16px; position: relative; overflow: hidden;
+  }
+  .watch-label { color: #7d8895; font-size: 11px; text-align: center; margin-top: 12px; }
+
+  /* --------- Inspektor screens (inside iphone-screen) --------- */
+  .ip-content { flex: 1; display: flex; flex-direction: column; position: relative; padding: 50px 22px 22px; }
+  .ip-content.fullbleed { padding: 0; }
+
+  .topbar { display: flex; justify-content: space-between; align-items: center; padding: 0 4px 18px; }
+  .topbar .title { font-size: 18px; font-weight: 600; }
+  .topbar .back { color: #00d9ff; font-size: 14px; cursor: pointer; }
+  .topbar .icon { color: #7d8895; font-size: 20px; cursor: pointer; }
+
+  .brand-name { font-size: 38px; font-weight: 700; letter-spacing: -1px; }
+  .brand-name .accent { color: #00d9ff; }
+  .brand-tag { color: #7d8895; font-size: 12px; margin-top: 4px; letter-spacing: 1px; text-transform: uppercase; }
+
+  .big-btn {
+    background: linear-gradient(135deg, #00d9ff, #0094c4);
+    color: #000; padding: 16px; border-radius: 14px; text-align: center;
+    font-weight: 700; font-size: 16px; cursor: pointer; margin-top: 14px;
+    box-shadow: 0 8px 20px -4px rgba(0,217,255,0.4);
+  }
+  .ghost-btn {
+    background: rgba(255,255,255,0.06); border: 1px solid rgba(255,255,255,0.1);
+    color: #f5f7fa; padding: 14px; border-radius: 12px; text-align: center;
+    font-weight: 500; font-size: 14px; margin-top: 10px;
+  }
+  .list-item {
+    background: rgba(255,255,255,0.04); border-radius: 12px; padding: 14px;
+    margin-top: 10px; display: flex; justify-content: space-between; align-items: center;
+  }
+  .list-item .lead { font-size: 14px; font-weight: 500; }
+  .list-item .sub { color: #7d8895; font-size: 12px; margin-top: 2px; }
+  .list-item .chevron { color: #555; font-size: 18px; }
+
+  .tile {
+    background: rgba(255,255,255,0.05); border-radius: 16px; padding: 18px;
+    margin-top: 12px; cursor: pointer; border: 1px solid rgba(255,255,255,0.06);
+  }
+  .tile .tile-brand { font-size: 22px; font-weight: 700; letter-spacing: 0.5px; }
+  .tile .tile-desc { color: #7d8895; font-size: 12px; margin-top: 4px; }
+
+  .mode-card {
+    background: rgba(255,255,255,0.04); border-radius: 14px; padding: 16px; margin-top: 12px;
+    border: 1px solid rgba(255,255,255,0.08);
+  }
+  .mode-card.selected { border-color: #00d9ff; background: rgba(0,217,255,0.1); }
+  .mode-card .mode-title { font-weight: 600; font-size: 15px; display: flex; justify-content: space-between; }
+  .mode-card .mode-title .badge { background: #00d9ff; color: #000; padding: 2px 8px; border-radius: 8px; font-size: 10px; font-weight: 700; }
+  .mode-card .mode-desc { color: #aab2bc; font-size: 12px; margin-top: 4px; }
+
+  .status-row { display: flex; align-items: center; padding: 10px 0; gap: 10px; }
+  .status-row .icon-pill {
+    width: 24px; height: 24px; border-radius: 6px; background: rgba(0,217,255,0.2);
+    color: #00d9ff; display: flex; align-items: center; justify-content: center; font-size: 14px; font-weight: 700;
+  }
+  .status-row .text { font-size: 13px; }
+  .status-row .text .sub { color: #7d8895; font-size: 11px; }
+
+  .reminder-tip { font-size: 11px; color: #7d8895; padding: 12px; background: rgba(255,180,40,0.08); border-radius: 8px; margin-top: 12px; border-left: 3px solid #ffb428; }
+
+  /* --------- Test display states --------- */
+  .test-canvas { position: absolute; inset: 0; display: flex; align-items: center; justify-content: center; }
+  .test-white { background: #ffffff; }
+  .test-red   { background: #ff1a1a; }
+  .test-green { background: #00cc44; }
+  .test-blue  { background: #1133ff; }
+  .test-black { background: #000000; }
+  .test-grey  { background: #808080; }
+  .test-quad  { display: grid; grid-template-columns: 1fr 1fr; grid-template-rows: 1fr 1fr; }
+  .test-quad > div:nth-child(1) { background: #fff; }
+  .test-quad > div:nth-child(2) { background: #000; }
+  .test-quad > div:nth-child(3) { background: #000; }
+  .test-quad > div:nth-child(4) { background: #fff; }
+
+  .marker-frame { background: #000; color: #fff; font-family: 'Menlo', monospace; font-size: 28px; font-weight: 700; letter-spacing: 2px; }
+
+  .test-hud {
+    position: absolute; bottom: 16px; left: 50%; transform: translateX(-50%);
+    background: rgba(0,0,0,0.55); backdrop-filter: blur(10px); padding: 6px 12px;
+    border-radius: 16px; font-size: 11px; color: #fff; display: flex; gap: 10px; align-items: center;
+    border: 1px solid rgba(255,255,255,0.15); z-index: 30;
+  }
+  .test-hud.dark { background: rgba(255,255,255,0.15); color: #000; border-color: rgba(0,0,0,0.2); }
+  .test-hud .dot { width: 6px; height: 6px; border-radius: 50%; background: #00d9ff; animation: pulse 1.6s infinite; }
+  @keyframes pulse { 0%, 100% { opacity: 0.4; } 50% { opacity: 1; } }
+
+  .voice-overlay {
+    position: absolute; left: 16px; right: 16px; bottom: 50px; z-index: 40;
+    background: rgba(0,0,0,0.7); backdrop-filter: blur(20px);
+    border: 1px solid rgba(0,217,255,0.4); border-radius: 14px; padding: 14px;
+  }
+  .voice-overlay .listening { display: flex; align-items: center; gap: 8px; }
+  .voice-overlay .listening .wave {
+    width: 4px; height: 14px; background: #00d9ff; border-radius: 2px;
+    animation: wave 0.7s infinite alternate;
+  }
+  .voice-overlay .listening .wave:nth-child(2) { animation-delay: 0.1s; height: 20px; }
+  .voice-overlay .listening .wave:nth-child(3) { animation-delay: 0.2s; height: 12px; }
+  .voice-overlay .listening .wave:nth-child(4) { animation-delay: 0.3s; height: 18px; }
+  .voice-overlay .listening .wave:nth-child(5) { animation-delay: 0.4s; height: 10px; }
+  @keyframes wave { 0% { transform: scaleY(0.4); } 100% { transform: scaleY(1); } }
+  .voice-overlay .label { color: #00d9ff; font-size: 11px; font-weight: 600; margin-left: 8px; text-transform: uppercase; letter-spacing: 1px; }
+  .voice-overlay .transcript { color: #fff; font-size: 14px; margin-top: 6px; font-weight: 500; }
+  .voice-overlay .transcript .cmd { color: #00d9ff; }
+
+  .flash-pass, .flash-fail {
+    position: absolute; inset: 0; display: flex; align-items: center; justify-content: center;
+    font-size: 64px; font-weight: 800; color: #fff; z-index: 60;
+    background: rgba(0,180,80,0.25); animation: flash 0.6s ease-out;
+  }
+  .flash-fail { background: rgba(220,40,60,0.3); }
+  @keyframes flash { 0% { opacity: 0; transform: scale(1.2); } 50% { opacity: 1; } 100% { opacity: 0; transform: scale(1); } }
+
+  /* --------- Summary list --------- */
+  .summary-row {
+    display: flex; align-items: center; padding: 10px 0;
+    border-bottom: 1px solid rgba(255,255,255,0.05);
+  }
+  .summary-row .test-name { flex: 1; font-size: 13px; }
+  .summary-row .verdict {
+    font-size: 10px; font-weight: 700; padding: 3px 8px; border-radius: 6px; text-transform: uppercase; letter-spacing: 0.5px;
+  }
+  .verdict.pass { background: rgba(0,180,80,0.2); color: #2eea7b; }
+  .verdict.fail { background: rgba(220,40,60,0.2); color: #ff5670; }
+  .verdict.note { background: rgba(255,180,40,0.2); color: #ffb428; margin-right: 6px; }
+
+  /* --------- PDF preview --------- */
+  .pdf-preview {
+    background: #fff; color: #222; border-radius: 10px; padding: 18px; font-size: 10px;
+    font-family: -apple-system, "Helvetica Neue", sans-serif; line-height: 1.4;
+    max-height: 380px; overflow: hidden; position: relative;
+  }
+  .pdf-preview h3 { font-size: 16px; border-bottom: 2px solid #2E75B6; padding-bottom: 4px; margin-bottom: 10px; color: #2E75B6; }
+  .pdf-preview .pdf-meta { color: #777; font-size: 9px; margin-bottom: 12px; }
+  .pdf-preview .pdf-section { margin-bottom: 10px; }
+  .pdf-preview .pdf-section h4 { font-size: 11px; color: #333; margin-bottom: 4px; }
+  .pdf-preview .pdf-row { display: flex; justify-content: space-between; padding: 3px 0; border-bottom: 1px solid #eee; font-size: 9px; }
+  .pdf-preview::after {
+    content: ''; position: absolute; bottom: 0; left: 0; right: 0; height: 60px;
+    background: linear-gradient(transparent, #fff);
+  }
+
+  /* --------- Watch screens --------- */
+  .w-content { width: 100%; height: 100%; display: flex; flex-direction: column; justify-content: center; align-items: center; text-align: center; padding: 6px; }
+  .w-content .w-time { position: absolute; top: 8px; right: 12px; color: #00d9ff; font-size: 13px; font-weight: 600; }
+  .w-content .w-label { color: #7d8895; font-size: 9px; text-transform: uppercase; letter-spacing: 1.5px; margin-bottom: 6px; }
+  .w-content .w-main { font-size: 18px; font-weight: 700; line-height: 1.15; }
+  .w-content .w-sub { font-size: 11px; color: #aab2bc; margin-top: 6px; }
+  .w-content .w-progress {
+    height: 4px; background: rgba(255,255,255,0.1); width: 80%; border-radius: 2px; margin-top: 14px; overflow: hidden;
+  }
+  .w-content .w-progress .bar { height: 100%; background: #00d9ff; transition: width 0.6s ease; }
+  .w-content .w-actions { display: flex; gap: 6px; margin-top: 14px; width: 100%; padding: 0 6px; }
+  .w-content .w-actions .w-btn { flex: 1; padding: 6px; border-radius: 8px; font-size: 10px; font-weight: 700; }
+  .w-actions .w-btn.pass { background: rgba(46,234,123,0.2); color: #2eea7b; }
+  .w-actions .w-btn.fail { background: rgba(255,86,112,0.2); color: #ff5670; }
+
+  .w-ptt { width: 70px; height: 70px; border-radius: 50%; background: linear-gradient(135deg, #00d9ff, #0094c4); display: flex; align-items: center; justify-content: center; color: #000; font-size: 28px; box-shadow: 0 0 24px rgba(0,217,255,0.5); }
+  .w-ptt-label { font-size: 9px; color: #7d8895; margin-top: 8px; text-transform: uppercase; letter-spacing: 1px; }
+
+  /* --------- Navigation --------- */
+  .nav {
+    position: fixed; bottom: 0; left: 0; right: 0;
+    background: rgba(8,12,18,0.92); backdrop-filter: blur(20px);
+    border-top: 1px solid rgba(255,255,255,0.08); padding: 14px 24px;
+    display: flex; justify-content: space-between; align-items: center; gap: 16px;
+  }
+  .nav-btn {
+    background: rgba(255,255,255,0.06); border: 1px solid rgba(255,255,255,0.1);
+    color: #fff; padding: 10px 18px; border-radius: 10px;
+    font-size: 13px; font-weight: 600; cursor: pointer;
+    display: flex; align-items: center; gap: 8px;
+  }
+  .nav-btn:hover { background: rgba(0,217,255,0.15); border-color: #00d9ff; }
+  .nav-btn.primary { background: #00d9ff; color: #000; border-color: #00d9ff; }
+  .nav-btn:disabled { opacity: 0.3; cursor: not-allowed; }
+  .nav-step { color: #aab2bc; font-size: 12px; font-weight: 500; text-align: center; min-width: 140px; }
+  .nav-step .current { color: #00d9ff; font-weight: 700; }
+
+  /* --------- Voice trigger button (demo) --------- */
+  .demo-bar { display: flex; gap: 12px; margin: 20px 0; flex-wrap: wrap; justify-content: center; max-width: 600px; }
+  .demo-btn {
+    background: rgba(0,217,255,0.1); border: 1px solid rgba(0,217,255,0.3);
+    color: #00d9ff; padding: 8px 14px; border-radius: 8px; font-size: 12px; cursor: pointer;
+  }
+  .demo-btn:hover { background: rgba(0,217,255,0.2); }
+
+  /* Misc */
+  .footer { color: #555; font-size: 11px; text-align: center; margin-top: 40px; }
+</style>
+</head>
+<body>
+
+<div class="header">
+  <h1>Inspektor <span class="accent">·</span> UI Mockup</h1>
+  <p>Quick-Check On-Set Workflow — interaktiv durchklicken</p>
+</div>
+
+<div class="screen-label" id="screenLabel">Screen 1 / 13 — Home</div>
+<div class="screen-caption" id="screenCaption">Startbildschirm. Letzte Sessions sind sichtbar, mit einem Tap geht es zur Kamera-Auswahl.</div>
+
+<div class="stage">
+  <!-- iPhone -->
+  <div class="iphone">
+    <div class="iphone-screen" id="iphoneScreen">
+      <div class="dynamic-island"></div>
+      <div class="ip-content" id="ipContent">
+        <!-- dynamically rendered -->
+      </div>
+    </div>
+  </div>
+
+  <!-- Watch -->
+  <div style="display: flex; flex-direction: column; align-items: center; gap: 8px;">
+    <div class="watch">
+      <div class="watch-screen" id="watchScreen">
+        <div class="w-content" id="wContent"></div>
+      </div>
+    </div>
+    <div class="watch-label">Apple Watch Companion</div>
+  </div>
+</div>
+
+<!-- Optional voice trigger demo -->
+<div class="demo-bar" id="demoBar"></div>
+
+<div class="nav">
+  <button class="nav-btn" id="prevBtn" onclick="changeScreen(-1)">← Zurück</button>
+  <div class="nav-step">Screen <span class="current" id="navCurrent">1</span> / 13</div>
+  <button class="nav-btn primary" id="nextBtn" onclick="changeScreen(1)">Weiter →</button>
+</div>
+
+<div class="footer">Inspektor — Konzept-Mockup für Pitch · Henneke 2026</div>
+
+<script>
+// ============== Screen definitions ==============
+const screens = [
+  // 1. Home
+  {
+    label: 'Home',
+    caption: 'Startbildschirm. Letzte Sessions sind direkt sichtbar, mit einem Tap geht es zur Kamera-Auswahl.',
+    iphone: () => `
+      <div style="text-align: center; margin-top: 30px;">
+        <div class="brand-name">Inspektor<span class="accent">.</span></div>
+        <div class="brand-tag">Camera Sensor QA</div>
+      </div>
+      <div style="margin-top: 36px;">
+        <div class="big-btn">+ Neue Test-Session</div>
+      </div>
+      <div style="margin-top: 26px;">
+        <div style="color: #7d8895; font-size: 11px; text-transform: uppercase; letter-spacing: 1px; margin-bottom: 8px;">Letzte Sessions</div>
+        <div class="list-item">
+          <div><div class="lead">ARRI Alexa 35</div><div class="sub">Gestern 14:32 · 8 Tests · 1 Fail</div></div>
+          <div class="chevron">›</div>
+        </div>
+        <div class="list-item">
+          <div><div class="lead">Sony Venice 2</div><div class="sub">Mo 22.05 · 7 Tests · All Pass</div></div>
+          <div class="chevron">›</div>
+        </div>
+        <div class="list-item">
+          <div><div class="lead">RED Komodo</div><div class="sub">Fr 19.05 · 8 Tests · 2 Fails</div></div>
+          <div class="chevron">›</div>
+        </div>
+      </div>
+    `,
+    watch: () => `
+      <div class="w-time">14:32</div>
+      <div class="w-label">Ready</div>
+      <div class="w-main">Inspektor</div>
+      <div class="w-sub">Verbunden</div>
+      <div style="margin-top: 18px;">
+        <div class="w-ptt">🎤</div>
+        <div class="w-ptt-label">Push to Talk</div>
+      </div>
+    `,
+  },
+
+  // 2. Camera manufacturer
+  {
+    label: 'Kamera-Hersteller',
+    caption: 'Hersteller-Auswahl. Drei Tiles, klar getrennt — auch per Sprachbefehl: „Inspektor — ARRI".',
+    iphone: () => `
+      <div class="topbar">
+        <span class="back">← Zurück</span>
+        <span class="title">Kamera</span>
+        <span class="icon">⚙</span>
+      </div>
+      <div style="color: #7d8895; font-size: 12px; margin: 12px 0 4px;">Hersteller wählen</div>
+      <div class="tile" style="border-color: rgba(0,217,255,0.3);">
+        <div class="tile-brand">ARRI</div>
+        <div class="tile-desc">Alexa 35, Mini, Mini LF</div>
+      </div>
+      <div class="tile">
+        <div class="tile-brand">RED</div>
+        <div class="tile-desc">Komodo, V-Raptor, Helium</div>
+      </div>
+      <div class="tile">
+        <div class="tile-brand">SONY</div>
+        <div class="tile-desc">Venice 2, FX9, FX6, FX3</div>
+      </div>
+    `,
+    watch: () => `
+      <div class="w-time">14:33</div>
+      <div class="w-label">Setup</div>
+      <div class="w-main">Wähle<br>Kamera</div>
+      <div class="w-sub" style="margin-top: 12px;">am iPhone</div>
+    `,
+  },
+
+  // 3. Camera model
+  {
+    label: 'Modell-Auswahl',
+    caption: 'ARRI gewählt — Modelle erscheinen. Im Detail später: Pixelpitch, empfohlene ISO.',
+    iphone: () => `
+      <div class="topbar">
+        <span class="back">← ARRI</span>
+        <span class="title">Modell</span>
+        <span class="icon">⚙</span>
+      </div>
+      <div style="margin-top: 16px;">
+        <div class="list-item" style="border: 1px solid #00d9ff;">
+          <div><div class="lead">Alexa 35</div><div class="sub">Super 35 · 4.6K · 8.25µm Pitch</div></div>
+          <div class="chevron" style="color: #00d9ff;">●</div>
+        </div>
+        <div class="list-item">
+          <div><div class="lead">Alexa Mini LF</div><div class="sub">Large Format · 4.5K · 8.25µm</div></div>
+          <div class="chevron">›</div>
+        </div>
+        <div class="list-item">
+          <div><div class="lead">Alexa Mini</div><div class="sub">Super 35 · 3.4K · 8.25µm</div></div>
+          <div class="chevron">›</div>
+        </div>
+      </div>
+      <div class="big-btn" style="margin-top: 22px;">Weiter →</div>
+    `,
+    watch: () => `
+      <div class="w-time">14:33</div>
+      <div class="w-label">Setup</div>
+      <div class="w-main">ARRI<br>Alexa 35</div>
+      <div class="w-sub" style="margin-top: 12px;">Modell gewählt</div>
+    `,
+  },
+
+  // 4. Details
+  {
+    label: 'Session-Details',
+    caption: 'Seriennummer, Objektiv und Operator. Spracheingabe möglich: „Inspektor — Seriennummer 4711".',
+    iphone: () => `
+      <div class="topbar">
+        <span class="back">← Zurück</span>
+        <span class="title">Details</span>
+        <span class="icon">⚙</span>
+      </div>
+      <div style="margin-top: 14px;">
+        <div style="color: #7d8895; font-size: 11px; margin-bottom: 4px; text-transform: uppercase; letter-spacing: 1px;">Seriennummer</div>
+        <div class="ghost-btn" style="text-align: left; padding: 14px; font-family: 'Menlo', monospace;">SXT-W 47114-A</div>
+        <div style="color: #7d8895; font-size: 11px; margin: 14px 0 4px; text-transform: uppercase; letter-spacing: 1px;">Objektiv</div>
+        <div class="ghost-btn" style="text-align: left; padding: 14px;">Master Prime 50mm T1.3</div>
+        <div style="color: #7d8895; font-size: 11px; margin: 14px 0 4px; text-transform: uppercase; letter-spacing: 1px;">Operator</div>
+        <div class="ghost-btn" style="text-align: left; padding: 14px;">Henneke H.</div>
+      </div>
+      <div class="big-btn" style="margin-top: 22px;">Weiter →</div>
+    `,
+    watch: () => `
+      <div class="w-time">14:34</div>
+      <div class="w-label">Setup</div>
+      <div class="w-main">Details<br>am iPhone</div>
+    `,
+  },
+
+  // 5. Mode selection
+  {
+    label: 'Test-Modus',
+    caption: 'Drei Sequenz-Varianten. Quick-Check ist Standard — 7 Minuten, 8 Tests.',
+    iphone: () => `
+      <div class="topbar">
+        <span class="back">← Zurück</span>
+        <span class="title">Modus</span>
+        <span class="icon">⚙</span>
+      </div>
+      <div style="color: #7d8895; font-size: 12px; margin: 14px 0 6px;">Welcher Test soll laufen?</div>
+      <div class="mode-card selected">
+        <div class="mode-title">Quick-Check On-Set <span class="badge">~7 MIN</span></div>
+        <div class="mode-desc">8 Sensor-Tests · Pixel · Splits · Vignettierung · FPN</div>
+      </div>
+      <div class="mode-card">
+        <div class="mode-title">Werkstatt-Diagnose <span class="badge" style="background: #7d8895;">~25 MIN</span></div>
+        <div class="mode-desc">24 Tests inkl. ISO-Sweep, Graukeil, Color-Cast</div>
+      </div>
+      <div class="mode-card">
+        <div class="mode-title">Custom-Sequenz <span class="badge" style="background: #7d8895;">VARIABEL</span></div>
+        <div class="mode-desc">Eigene Test-Reihenfolge konfigurieren</div>
+      </div>
+      <div class="big-btn" style="margin-top: 18px;">Starten</div>
+    `,
+    watch: () => `
+      <div class="w-time">14:34</div>
+      <div class="w-label">Bereit</div>
+      <div class="w-main">Quick-<br>Check</div>
+      <div class="w-sub" style="margin-top: 8px;">8 Tests · 7 Min</div>
+    `,
+  },
+
+  // 6. Pre-test reminder
+  {
+    label: 'Pre-Test Check',
+    caption: 'Schlanker Reminder. Helligkeit wird auto-gesetzt, Mikrofon und Watch sind aktiv. Ein Tap startet.',
+    iphone: () => `
+      <div class="topbar">
+        <span class="back">← Zurück</span>
+        <span class="title">Bereit</span>
+        <span class="icon">⚙</span>
+      </div>
+      <div style="margin-top: 18px;">
+        <div class="status-row">
+          <div class="icon-pill">✓</div>
+          <div class="text">Display-Helligkeit<div class="sub">Auto-Set auf 100%</div></div>
+        </div>
+        <div class="status-row">
+          <div class="icon-pill">✓</div>
+          <div class="text">Auto-Lock deaktiviert<div class="sub">Display bleibt an</div></div>
+        </div>
+        <div class="status-row">
+          <div class="icon-pill">✓</div>
+          <div class="text">Inspektor-Wake-Word aktiv<div class="sub">Lauscht permanent</div></div>
+        </div>
+        <div class="status-row">
+          <div class="icon-pill">✓</div>
+          <div class="text">Apple Watch verbunden<div class="sub">Push-to-Talk bereit</div></div>
+        </div>
+      </div>
+      <div class="reminder-tip">Tipp: True Tone und Night Shift bitte in den iOS-Einstellungen deaktivieren für maximale Konsistenz.</div>
+      <div class="big-btn" style="margin-top: 16px;">Sequenz starten</div>
+    `,
+    watch: () => `
+      <div class="w-time">14:35</div>
+      <div class="w-label">Bereit</div>
+      <div class="w-main">Start?</div>
+      <div class="w-actions" style="margin-top: 14px;">
+        <div class="w-btn pass">START</div>
+      </div>
+    `,
+  },
+
+  // 7. Test running - white field
+  {
+    label: 'Test 1/8 · Uniform White',
+    caption: 'Vollbild Weiß für Pixelfehler-Check und Vignettierung. Kein UI auf dem iPhone — alles auf der Watch.',
+    fullbleed: true,
+    iphone: () => `
+      <div class="test-canvas test-white"></div>
+      <div class="test-hud dark"><span class="dot" style="background: #000;"></span> TEST 1/8 · UNIFORM WHITE · 0:06</div>
+    `,
+    watch: () => `
+      <div class="w-time">14:35</div>
+      <div class="w-label">Test 1 / 8</div>
+      <div class="w-main">Uniform<br>White</div>
+      <div class="w-sub" style="margin-top: 6px;">0:06 verbleibend</div>
+      <div class="w-progress"><div class="bar" style="width: 12%;"></div></div>
+      <div class="w-actions">
+        <div class="w-btn pass">✓</div>
+        <div class="w-btn fail">✗</div>
+      </div>
+    `,
+  },
+
+  // 8. Voice command - Note
+  {
+    label: 'Sprachbefehl · Notiz',
+    caption: '„Inspektor — Notiz: hot pixel oben rechts" — Erkennung läuft on-device, Watch vibriert zur Bestätigung.',
+    fullbleed: true,
+    iphone: () => `
+      <div class="test-canvas test-white"></div>
+      <div class="voice-overlay">
+        <div class="listening">
+          <div class="wave"></div><div class="wave"></div><div class="wave"></div><div class="wave"></div><div class="wave"></div>
+          <div class="label">Höre zu …</div>
+        </div>
+        <div class="transcript"><span class="cmd">"Inspektor"</span> — Notiz: hot pixel oben rechts bei Frame 4</div>
+      </div>
+      <div class="test-hud dark"><span class="dot" style="background: #000;"></span> TEST 1/8 · UNIFORM WHITE · 0:03</div>
+    `,
+    watch: () => `
+      <div class="w-time">14:35</div>
+      <div class="w-label">Notiz</div>
+      <div class="w-main" style="font-size: 14px;">"hot pixel oben rechts bei Frame 4"</div>
+      <div class="w-sub" style="margin-top: 8px; color: #2eea7b;">✓ gespeichert</div>
+    `,
+  },
+
+  // 9. Marker frame
+  {
+    label: 'Marker · Test 2',
+    caption: 'Zwischen jedem Test ein Marker-Frame zur klaren Trennung in der Aufnahme.',
+    fullbleed: true,
+    iphone: () => `
+      <div class="test-canvas marker-frame">
+        <div style="text-align: center;">
+          <div style="font-size: 14px; color: #00d9ff; letter-spacing: 4px; margin-bottom: 16px;">TEST 2 / 8</div>
+          <div style="font-size: 36px;">RED FULL FIELD</div>
+        </div>
+      </div>
+    `,
+    watch: () => `
+      <div class="w-time">14:36</div>
+      <div class="w-label">Wechsel</div>
+      <div class="w-main">Test 2/8</div>
+      <div class="w-sub" style="margin-top: 6px;">Red Full Field</div>
+      <div class="w-progress"><div class="bar" style="width: 25%;"></div></div>
+    `,
+  },
+
+  // 10. Test - Red field
+  {
+    label: 'Test 2/8 · Rotes Vollbild',
+    caption: 'Rote Vollfläche für Pixel-Test auf rotem Kanal. „Inspektor — fail" wird sofort getaggt.',
+    fullbleed: true,
+    iphone: () => `
+      <div class="test-canvas test-red"></div>
+      <div class="voice-overlay">
+        <div class="listening">
+          <div class="wave"></div><div class="wave"></div><div class="wave"></div><div class="wave"></div><div class="wave"></div>
+          <div class="label">Befehl erkannt</div>
+        </div>
+        <div class="transcript"><span class="cmd">"Inspektor"</span> — fail</div>
+      </div>
+      <div class="test-hud"><span class="dot"></span> TEST 2/8 · RED · 0:04</div>
+    `,
+    watch: () => `
+      <div class="w-time">14:36</div>
+      <div class="w-label">Test 2 / 8</div>
+      <div class="w-main">Red</div>
+      <div class="w-sub" style="margin-top: 6px; color: #ff5670;">✗ FAIL</div>
+      <div class="w-progress"><div class="bar" style="width: 25%;"></div></div>
+      <div class="w-actions">
+        <div class="w-btn pass">✓</div>
+        <div class="w-btn fail" style="background: rgba(255,86,112,0.4);">✗</div>
+      </div>
+    `,
+  },
+
+  // 11. Test - Quadrants
+  {
+    label: 'Test 5/8 · Quadranten-Split',
+    caption: 'Schwarz-Weiß-Quadranten zur Detektion von halbseitigen Chip-Fehlern.',
+    fullbleed: true,
+    iphone: () => `
+      <div class="test-canvas test-quad">
+        <div></div><div></div><div></div><div></div>
+      </div>
+      <div class="test-hud dark"><span class="dot" style="background: #000;"></span> TEST 5/8 · QUADRANT SPLIT · 0:08</div>
+    `,
+    watch: () => `
+      <div class="w-time">14:38</div>
+      <div class="w-label">Test 5 / 8</div>
+      <div class="w-main" style="font-size: 14px;">Quadrant<br>Split</div>
+      <div class="w-sub" style="margin-top: 6px;">0:08 verbleibend</div>
+      <div class="w-progress"><div class="bar" style="width: 62%;"></div></div>
+      <div class="w-actions">
+        <div class="w-btn pass">✓</div>
+        <div class="w-btn fail">✗</div>
+      </div>
+    `,
+  },
+
+  // 12. Summary
+  {
+    label: 'Session-Übersicht',
+    caption: 'Sequenz fertig. 8 Tests, 1 Fail, 2 Notizen. Direkt zum Report.',
+    iphone: () => `
+      <div class="topbar">
+        <span class="back">← Home</span>
+        <span class="title">Fertig</span>
+        <span class="icon">⚙</span>
+      </div>
+      <div style="margin-top: 12px;">
+        <div style="font-size: 18px; font-weight: 700;">ARRI Alexa 35</div>
+        <div style="color: #7d8895; font-size: 12px; margin-top: 2px;">SXT-W 47114-A · 14:35 — 14:42</div>
+      </div>
+      <div style="margin-top: 14px; padding: 10px; background: rgba(255,255,255,0.04); border-radius: 10px; display: flex; gap: 18px;">
+        <div><div style="font-size: 22px; font-weight: 700;">8</div><div style="font-size: 10px; color: #7d8895;">Tests</div></div>
+        <div><div style="font-size: 22px; font-weight: 700; color: #2eea7b;">7</div><div style="font-size: 10px; color: #7d8895;">Pass</div></div>
+        <div><div style="font-size: 22px; font-weight: 700; color: #ff5670;">1</div><div style="font-size: 10px; color: #7d8895;">Fail</div></div>
+        <div><div style="font-size: 22px; font-weight: 700; color: #ffb428;">2</div><div style="font-size: 10px; color: #7d8895;">Notizen</div></div>
+      </div>
+      <div style="margin-top: 12px; max-height: 200px; overflow-y: auto;">
+        <div class="summary-row"><div class="test-name">1 · Uniform White</div><span class="verdict note">N</span><span class="verdict pass">Pass</span></div>
+        <div class="summary-row"><div class="test-name">2 · Red Full</div><span class="verdict fail">Fail</span></div>
+        <div class="summary-row"><div class="test-name">3 · Green Full</div><span class="verdict pass">Pass</span></div>
+        <div class="summary-row"><div class="test-name">4 · Blue Full</div><span class="verdict pass">Pass</span></div>
+        <div class="summary-row"><div class="test-name">5 · Quadrant Split</div><span class="verdict pass">Pass</span></div>
+        <div class="summary-row"><div class="test-name">6 · Black + High ISO</div><span class="verdict note">N</span><span class="verdict pass">Pass</span></div>
+        <div class="summary-row"><div class="test-name">7 · Color Cast</div><span class="verdict pass">Pass</span></div>
+        <div class="summary-row"><div class="test-name">8 · 18% Grey</div><span class="verdict pass">Pass</span></div>
+      </div>
+      <div class="big-btn" style="margin-top: 14px;">PDF-Report erstellen</div>
+    `,
+    watch: () => `
+      <div class="w-time">14:42</div>
+      <div class="w-label">Fertig</div>
+      <div class="w-main" style="font-size: 14px;">7 Pass<br>1 Fail</div>
+      <div class="w-sub" style="margin-top: 8px;">PDF folgt</div>
+      <div class="w-progress"><div class="bar" style="width: 100%;"></div></div>
+    `,
+  },
+
+  // 13. Report preview
+  {
+    label: 'PDF-Report',
+    caption: 'Generierter Report — Camera-Meta, Test-Verdicts, Notizen mit Zeitstempel. Per AirDrop, Mail oder Cloud teilbar.',
+    iphone: () => `
+      <div class="topbar">
+        <span class="back">← Zurück</span>
+        <span class="title">Report</span>
+        <span class="icon">↗</span>
+      </div>
+      <div class="pdf-preview" style="margin-top: 12px;">
+        <h3>Camera Sensor Test Report</h3>
+        <div class="pdf-meta">
+          ARRI Alexa 35 · SXT-W 47114-A<br>
+          Master Prime 50mm T1.3 · Operator: Henneke H.<br>
+          Sa 31.05.2026 · 14:35-14:42 · Quick-Check Mode
+        </div>
+        <div class="pdf-section">
+          <h4>Summary</h4>
+          <div class="pdf-row"><span>Total Tests</span><span>8</span></div>
+          <div class="pdf-row"><span style="color:#2a8a3a;">Pass</span><span>7</span></div>
+          <div class="pdf-row"><span style="color:#b03040;">Fail</span><span>1</span></div>
+          <div class="pdf-row"><span>Notes</span><span>2</span></div>
+        </div>
+        <div class="pdf-section">
+          <h4>Test Details</h4>
+          <div class="pdf-row"><span>1 · Uniform White</span><span style="color:#2a8a3a;">PASS</span></div>
+          <div class="pdf-row" style="font-size: 8px; color: #777; padding-left: 12px;">Note 14:35:42 — "hot pixel oben rechts bei Frame 4"</div>
+          <div class="pdf-row"><span>2 · Red Full Field</span><span style="color:#b03040;">FAIL</span></div>
+        </div>
+      </div>
+      <div class="big-btn" style="margin-top: 12px;">Teilen</div>
+    `,
+    watch: () => `
+      <div class="w-time">14:43</div>
+      <div class="w-label">Report</div>
+      <div class="w-main" style="font-size: 14px;">PDF<br>bereit</div>
+      <div class="w-sub" style="margin-top: 8px; color: #2eea7b;">✓ generiert</div>
+    `,
+  },
+];
+
+// ============== State + render ==============
+let idx = 0;
+function render() {
+  const s = screens[idx];
+  document.getElementById('ipContent').innerHTML = s.iphone();
+  document.getElementById('ipContent').className = 'ip-content' + (s.fullbleed ? ' fullbleed' : '');
+  document.getElementById('wContent').innerHTML = s.watch();
+  document.getElementById('screenLabel').textContent = `Screen ${idx+1} / ${screens.length} — ${s.label}`;
+  document.getElementById('screenCaption').textContent = s.caption;
+  document.getElementById('navCurrent').textContent = idx+1;
+  document.getElementById('prevBtn').disabled = idx === 0;
+  document.getElementById('nextBtn').disabled = idx === screens.length - 1;
+  document.getElementById('nextBtn').textContent = idx === screens.length - 1 ? 'Ende' : 'Weiter →';
+}
+function changeScreen(delta) {
+  idx = Math.max(0, Math.min(screens.length - 1, idx + delta));
+  render();
+}
+document.addEventListener('keydown', (e) => {
+  if (e.key === 'ArrowRight') changeScreen(1);
+  if (e.key === 'ArrowLeft') changeScreen(-1);
+});
+render();
+</script>
+
+</body>
+</html>
