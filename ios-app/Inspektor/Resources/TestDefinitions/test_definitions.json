@@ -1,0 +1,67 @@
+[
+  {
+    "id": "pixel_fullfield_white",
+    "name": "Pixel-Test Weiß",
+    "category": "sensor",
+    "renderer": "fullField",
+    "params": {
+      "color": [1.0, 1.0, 1.0, 1.0],
+      "colorSpace": "displayP3"
+    },
+    "durationSeconds": 8,
+    "voiceTriggers": ["weiß", "white", "pixel weiß"],
+    "appliesTo": ["all"]
+  },
+  {
+    "id": "pixel_fullfield_black",
+    "name": "Pixel-Test Schwarz",
+    "category": "sensor",
+    "renderer": "fullField",
+    "params": {
+      "color": [0.0, 0.0, 0.0, 1.0],
+      "colorSpace": "displayP3"
+    },
+    "durationSeconds": 8,
+    "voiceTriggers": ["schwarz", "black", "pixel schwarz"],
+    "appliesTo": ["all"]
+  },
+  {
+    "id": "pixel_fullfield_red",
+    "name": "Pixel-Test Rot",
+    "category": "sensor",
+    "renderer": "fullField",
+    "params": {
+      "color": [1.0, 0.0, 0.0, 1.0],
+      "colorSpace": "displayP3"
+    },
+    "durationSeconds": 8,
+    "voiceTriggers": ["rot", "red"],
+    "appliesTo": ["all"]
+  },
+  {
+    "id": "pixel_fullfield_green",
+    "name": "Pixel-Test Grün",
+    "category": "sensor",
+    "renderer": "fullField",
+    "params": {
+      "color": [0.0, 1.0, 0.0, 1.0],
+      "colorSpace": "displayP3"
+    },
+    "durationSeconds": 8,
+    "voiceTriggers": ["grün", "green"],
+    "appliesTo": ["all"]
+  },
+  {
+    "id": "pixel_fullfield_blue",
+    "name": "Pixel-Test Blau",
+    "category": "sensor",
+    "renderer": "fullField",
+    "params": {
+      "color": [0.0, 0.0, 1.0, 1.0],
+      "colorSpace": "displayP3"
+    },
+    "durationSeconds": 8,
+    "voiceTriggers": ["blau", "blue"],
+    "appliesTo": ["all"]
+  }
+]
