@@ -1,0 +1,92 @@
+[
+  {
+    "id": "arri_alexa35",
+    "manufacturer": "ARRI",
+    "model": "Alexa 35",
+    "sensorResolution": "4608x3164",
+    "pixelPitchMicrons": 8.25,
+    "recommendedISO": [800, 1600, 3200],
+    "notes": "Super 35 CMOS · Open Gate 4.6K"
+  },
+  {
+    "id": "arri_alexa_mini_lf",
+    "manufacturer": "ARRI",
+    "model": "Alexa Mini LF",
+    "sensorResolution": "4448x3096",
+    "pixelPitchMicrons": 8.25,
+    "recommendedISO": [800, 1600, 3200],
+    "notes": "Large Format · 4.5K"
+  },
+  {
+    "id": "arri_alexa_mini",
+    "manufacturer": "ARRI",
+    "model": "Alexa Mini",
+    "sensorResolution": "3424x2202",
+    "pixelPitchMicrons": 8.25,
+    "recommendedISO": [800, 1600, 3200],
+    "notes": "Super 35 · 3.4K"
+  },
+  {
+    "id": "red_komodo",
+    "manufacturer": "RED",
+    "model": "Komodo",
+    "sensorResolution": "6144x3240",
+    "pixelPitchMicrons": 4.88,
+    "recommendedISO": [800, 1600, 3200],
+    "notes": "Super 35 · 6K Global Shutter"
+  },
+  {
+    "id": "red_vraptor",
+    "manufacturer": "RED",
+    "model": "V-Raptor",
+    "sensorResolution": "8192x4320",
+    "pixelPitchMicrons": 4.88,
+    "recommendedISO": [800, 1600, 3200],
+    "notes": "Vista Vision · 8K"
+  },
+  {
+    "id": "red_helium",
+    "manufacturer": "RED",
+    "model": "Helium",
+    "sensorResolution": "8192x4320",
+    "pixelPitchMicrons": 3.65,
+    "recommendedISO": [800, 1600, 3200],
+    "notes": "Super 35 · 8K"
+  },
+  {
+    "id": "sony_venice2",
+    "manufacturer": "Sony",
+    "model": "Venice 2",
+    "sensorResolution": "6048x4032",
+    "pixelPitchMicrons": 5.26,
+    "recommendedISO": [800, 1600, 3200],
+    "notes": "Full Frame · 6K · Dual Base ISO"
+  },
+  {
+    "id": "sony_fx9",
+    "manufacturer": "Sony",
+    "model": "FX9",
+    "sensorResolution": "6048x4032",
+    "pixelPitchMicrons": 5.26,
+    "recommendedISO": [800, 1600],
+    "notes": "Full Frame · 6K"
+  },
+  {
+    "id": "sony_fx6",
+    "manufacturer": "Sony",
+    "model": "FX6",
+    "sensorResolution": "3840x2160",
+    "pixelPitchMicrons": 7.5,
+    "recommendedISO": [800, 1600],
+    "notes": "Full Frame · 4K"
+  },
+  {
+    "id": "sony_fx3",
+    "manufacturer": "Sony",
+    "model": "FX3",
+    "sensorResolution": "3840x2160",
+    "pixelPitchMicrons": 7.5,
+    "recommendedISO": [800, 1600],
+    "notes": "Full Frame · 4K"
+  }
+]

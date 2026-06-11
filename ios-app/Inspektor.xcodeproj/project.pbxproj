@@ -8,48 +8,55 @@
 
 /* Begin PBXBuildFile section */
 		263EB4B71B2FD67BBDC9C0FE /* HomeView.swift in Sources */ = {isa = PBXBuildFile; fileRef = BAC2D675F9051E0E7A985CE9 /* HomeView.swift */; };
+		29B39AD4E203CD624E334587 /* TestSequence.swift in Sources */ = {isa = PBXBuildFile; fileRef = 86DD36360A14C7152ABB30F8 /* TestSequence.swift */; };
 		3B65D19B487EAD22871F75DA /* CameraSelectionView.swift in Sources */ = {isa = PBXBuildFile; fileRef = B6C9269D99674046ED5D248B /* CameraSelectionView.swift */; };
+		4E3FDAFB822EF9D46F447C33 /* AppNavigation.swift in Sources */ = {isa = PBXBuildFile; fileRef = C5834DD51A73796F16107A44 /* AppNavigation.swift */; };
+		667F65B075240DCC393EF7B8 /* SequenceRunner.swift in Sources */ = {isa = PBXBuildFile; fileRef = 31756CBF7739205F8A732BA3 /* SequenceRunner.swift */; };
 		67F664F5C3ECFCD1A3866445 /* TestEngine.swift in Sources */ = {isa = PBXBuildFile; fileRef = 9A7FD49A604D9B055CBA6C64 /* TestEngine.swift */; };
+		71A2F17422235078C64E2092 /* ModeSelectionView.swift in Sources */ = {isa = PBXBuildFile; fileRef = 09F92CCE248BFD9BFCBF1D4B /* ModeSelectionView.swift */; };
+		7F8311A50F3F067F10D789C3 /* SessionSetupModel.swift in Sources */ = {isa = PBXBuildFile; fileRef = 2EAC7FBAB14AE50721D96458 /* SessionSetupModel.swift */; };
 		8F07F33F362F5021A272D803 /* TestRunnerView.swift in Sources */ = {isa = PBXBuildFile; fileRef = 097B62CD59F890605F885983 /* TestRunnerView.swift */; };
-		9779630E8577CFF9A7877C58 /* test_definitions.json in Resources */ = {isa = PBXBuildFile; fileRef = FF5FDE9297A0E668FB2A42DD /* test_definitions.json */; };
+		9E6A8B5F9213FA03FB88A38E /* CameraProfile.swift in Sources */ = {isa = PBXBuildFile; fileRef = AB17CB2BD5E9FB2767EE0D59 /* CameraProfile.swift */; };
 		A55B91FDC84646769FBEE0A4 /* TestDefinition.swift in Sources */ = {isa = PBXBuildFile; fileRef = A78FAA72907DAA1D2C0DB3AA /* TestDefinition.swift */; };
+		B7F087D44BFF1393E0D23053 /* SessionDetailsView.swift in Sources */ = {isa = PBXBuildFile; fileRef = 241130A4A29B002703DC5432 /* SessionDetailsView.swift */; };
+		C42815078C2D9FDB25453B65 /* InspektorColors.swift in Sources */ = {isa = PBXBuildFile; fileRef = 5BA8D70A533CBBB951373F92 /* InspektorColors.swift */; };
 		D6770C8832EE019CC3E4C0FE /* InspektorApp.swift in Sources */ = {isa = PBXBuildFile; fileRef = 2B1347C1690BBD634BFF2D0F /* InspektorApp.swift */; };
+		DE54EF94BD2F944170F144F4 /* ModelView.swift in Sources */ = {isa = PBXBuildFile; fileRef = 1120BDACF7BA7280354FC8B6 /* ModelView.swift */; };
+		E44C664F5F57843F51B22DBF /* PreTestReminderView.swift in Sources */ = {isa = PBXBuildFile; fileRef = BB2E43064BE0357D91350DDC /* PreTestReminderView.swift */; };
 		FF888240E7072EB538311CD7 /* DisplayManager.swift in Sources */ = {isa = PBXBuildFile; fileRef = 8C072786C68BCD69A7217EC7 /* DisplayManager.swift */; };
 /* End PBXBuildFile section */
 
 /* Begin PBXFileReference section */
 		097B62CD59F890605F885983 /* TestRunnerView.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = TestRunnerView.swift; sourceTree = "<group>"; };
+		09F92CCE248BFD9BFCBF1D4B /* ModeSelectionView.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = ModeSelectionView.swift; sourceTree = "<group>"; };
+		1120BDACF7BA7280354FC8B6 /* ModelView.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = ModelView.swift; sourceTree = "<group>"; };
+		241130A4A29B002703DC5432 /* SessionDetailsView.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = SessionDetailsView.swift; sourceTree = "<group>"; };
 		2B1347C1690BBD634BFF2D0F /* InspektorApp.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = InspektorApp.swift; sourceTree = "<group>"; };
+		2EAC7FBAB14AE50721D96458 /* SessionSetupModel.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = SessionSetupModel.swift; sourceTree = "<group>"; };
+		31756CBF7739205F8A732BA3 /* SequenceRunner.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = SequenceRunner.swift; sourceTree = "<group>"; };
+		5BA8D70A533CBBB951373F92 /* InspektorColors.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = InspektorColors.swift; sourceTree = "<group>"; };
 		7462D380EA0F48D5A78405BE /* Inspektor.app */ = {isa = PBXFileReference; includeInIndex = 0; lastKnownFileType = wrapper.application; path = Inspektor.app; sourceTree = BUILT_PRODUCTS_DIR; };
+		86DD36360A14C7152ABB30F8 /* TestSequence.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = TestSequence.swift; sourceTree = "<group>"; };
 		8C072786C68BCD69A7217EC7 /* DisplayManager.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = DisplayManager.swift; sourceTree = "<group>"; };
 		9A7FD49A604D9B055CBA6C64 /* TestEngine.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = TestEngine.swift; sourceTree = "<group>"; };
 		A78FAA72907DAA1D2C0DB3AA /* TestDefinition.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = TestDefinition.swift; sourceTree = "<group>"; };
+		AB17CB2BD5E9FB2767EE0D59 /* CameraProfile.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = CameraProfile.swift; sourceTree = "<group>"; };
 		B6C9269D99674046ED5D248B /* CameraSelectionView.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = CameraSelectionView.swift; sourceTree = "<group>"; };
 		BAC2D675F9051E0E7A985CE9 /* HomeView.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = HomeView.swift; sourceTree = "<group>"; };
-		FF5FDE9297A0E668FB2A42DD /* test_definitions.json */ = {isa = PBXFileReference; lastKnownFileType = text.json; path = test_definitions.json; sourceTree = "<group>"; };
+		BB2E43064BE0357D91350DDC /* PreTestReminderView.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = PreTestReminderView.swift; sourceTree = "<group>"; };
+		C5834DD51A73796F16107A44 /* AppNavigation.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = AppNavigation.swift; sourceTree = "<group>"; };
 /* End PBXFileReference section */
 
 /* Begin PBXGroup section */
-		09C2306BDC423BE548A02993 /* CameraProfiles */ = {
-			isa = PBXGroup;
-			children = (
-			);
-			path = CameraProfiles;
-			sourceTree = "<group>";
-		};
-		14DFB03B3D5E23BFB62D5E9E /* TestDefinitions */ = {
-			isa = PBXGroup;
-			children = (
-				FF5FDE9297A0E668FB2A42DD /* test_definitions.json */,
-			);
-			path = TestDefinitions;
-			sourceTree = "<group>";
-		};
 		1ADCF2BF4E221FB386C10B9A /* TestEngine */ = {
 			isa = PBXGroup;
 			children = (
+				AB17CB2BD5E9FB2767EE0D59 /* CameraProfile.swift */,
+				31756CBF7739205F8A732BA3 /* SequenceRunner.swift */,
+				2EAC7FBAB14AE50721D96458 /* SessionSetupModel.swift */,
 				A78FAA72907DAA1D2C0DB3AA /* TestDefinition.swift */,
 				9A7FD49A604D9B055CBA6C64 /* TestEngine.swift */,
+				86DD36360A14C7152ABB30F8 /* TestSequence.swift */,
 			);
 			path = TestEngine;
 			sourceTree = "<group>";
@@ -59,6 +66,7 @@
 			children = (
 				90DF31E0A7D1B532B68BDB62 /* CameraSelection */,
 				346ABFCC9A0F7DE1C7614AD9 /* Home */,
+				882157569F6CA0BC9D9991B6 /* ModeSelection */,
 				5A7E06B379173A3FE973487A /* TestRunner */,
 			);
 			path = Features;
@@ -92,6 +100,7 @@
 		5A7E06B379173A3FE973487A /* TestRunner */ = {
 			isa = PBXGroup;
 			children = (
+				BB2E43064BE0357D91350DDC /* PreTestReminderView.swift */,
 				097B62CD59F890605F885983 /* TestRunnerView.swift */,
 			);
 			path = TestRunner;
@@ -108,10 +117,20 @@
 			path = Inspektor;
 			sourceTree = "<group>";
 		};
+		882157569F6CA0BC9D9991B6 /* ModeSelection */ = {
+			isa = PBXGroup;
+			children = (
+				09F92CCE248BFD9BFCBF1D4B /* ModeSelectionView.swift */,
+			);
+			path = ModeSelection;
+			sourceTree = "<group>";
+		};
 		90DF31E0A7D1B532B68BDB62 /* CameraSelection */ = {
 			isa = PBXGroup;
 			children = (
 				B6C9269D99674046ED5D248B /* CameraSelectionView.swift */,
+				1120BDACF7BA7280354FC8B6 /* ModelView.swift */,
+				241130A4A29B002703DC5432 /* SessionDetailsView.swift */,
 			);
 			path = CameraSelection;
 			sourceTree = "<group>";
@@ -119,8 +138,6 @@
 		A81C6D8436F75095A05C9A3C /* Resources */ = {
 			isa = PBXGroup;
 			children = (
-				09C2306BDC423BE548A02993 /* CameraProfiles */,
-				14DFB03B3D5E23BFB62D5E9E /* TestDefinitions */,
 			);
 			path = Resources;
 			sourceTree = "<group>";
@@ -144,7 +161,9 @@
 		F691552520F9FD2CC77DC094 /* App */ = {
 			isa = PBXGroup;
 			children = (
+				C5834DD51A73796F16107A44 /* AppNavigation.swift */,
 				2B1347C1690BBD634BFF2D0F /* InspektorApp.swift */,
+				5BA8D70A533CBBB951373F92 /* InspektorColors.swift */,
 			);
 			path = App;
 			sourceTree = "<group>";
@@ -157,7 +176,6 @@
 			buildConfigurationList = C991F946CE89BBD87F80EA86 /* Build configuration list for PBXNativeTarget "Inspektor" */;
 			buildPhases = (
 				DACA31B37224D797B2DA2497 /* Sources */,
-				7E0B3A4A7AB7C84407476CBD /* Resources */,
 			);
 			buildRules = (
 			);
@@ -203,29 +221,28 @@
 		};
 /* End PBXProject section */
 
-/* Begin PBXResourcesBuildPhase section */
-		7E0B3A4A7AB7C84407476CBD /* Resources */ = {
-			isa = PBXResourcesBuildPhase;
-			buildActionMask = 2147483647;
-			files = (
-				9779630E8577CFF9A7877C58 /* test_definitions.json in Resources */,
-			);
-			runOnlyForDeploymentPostprocessing = 0;
-		};
-/* End PBXResourcesBuildPhase section */
-
 /* Begin PBXSourcesBuildPhase section */
 		DACA31B37224D797B2DA2497 /* Sources */ = {
 			isa = PBXSourcesBuildPhase;
 			buildActionMask = 2147483647;
 			files = (
+				4E3FDAFB822EF9D46F447C33 /* AppNavigation.swift in Sources */,
+				9E6A8B5F9213FA03FB88A38E /* CameraProfile.swift in Sources */,
 				3B65D19B487EAD22871F75DA /* CameraSelectionView.swift in Sources */,
 				FF888240E7072EB538311CD7 /* DisplayManager.swift in Sources */,
 				263EB4B71B2FD67BBDC9C0FE /* HomeView.swift in Sources */,
 				D6770C8832EE019CC3E4C0FE /* InspektorApp.swift in Sources */,
+				C42815078C2D9FDB25453B65 /* InspektorColors.swift in Sources */,
+				71A2F17422235078C64E2092 /* ModeSelectionView.swift in Sources */,
+				DE54EF94BD2F944170F144F4 /* ModelView.swift in Sources */,
+				E44C664F5F57843F51B22DBF /* PreTestReminderView.swift in Sources */,
+				667F65B075240DCC393EF7B8 /* SequenceRunner.swift in Sources */,
+				B7F087D44BFF1393E0D23053 /* SessionDetailsView.swift in Sources */,
+				7F8311A50F3F067F10D789C3 /* SessionSetupModel.swift in Sources */,
 				A55B91FDC84646769FBEE0A4 /* TestDefinition.swift in Sources */,
 				67F664F5C3ECFCD1A3866445 /* TestEngine.swift in Sources */,
 				8F07F33F362F5021A272D803 /* TestRunnerView.swift in Sources */,
+				29B39AD4E203CD624E334587 /* TestSequence.swift in Sources */,
 			);
 			runOnlyForDeploymentPostprocessing = 0;
 		};
@@ -248,7 +265,7 @@
 					"$(inherited)",
 					"@executable_path/Frameworks",
 				);
-				MARKETING_VERSION = 0.1.0;
+				MARKETING_VERSION = 0.2.0;
 				PRODUCT_BUNDLE_IDENTIFIER = com.inspektor.app;
 				SDKROOT = iphoneos;
 				SWIFT_EMIT_LOC_STRINGS = YES;
@@ -329,7 +346,7 @@
 					"$(inherited)",
 					"@executable_path/Frameworks",
 				);
-				MARKETING_VERSION = 0.1.0;
+				MARKETING_VERSION = 0.2.0;
 				PRODUCT_BUNDLE_IDENTIFIER = com.inspektor.app;
 				SDKROOT = iphoneos;
 				SWIFT_EMIT_LOC_STRINGS = YES;

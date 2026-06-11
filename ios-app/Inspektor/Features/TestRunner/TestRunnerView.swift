@@ -1,50 +1,56 @@
 import SwiftUI
 
 struct TestRunnerView: View {
-    @EnvironmentObject private var engine: TestEngine
+    @EnvironmentObject private var runner: SequenceRunner
     @Environment(\.dismiss) private var dismiss
-
-    let test: TestDefinition
 
     var body: some View {
         ZStack {
-            if engine.isRunning {
-                fullScreenTestView
+            Color.black.ignoresSafeArea()
+
+            if let test = runner.currentTest {
+                testCanvas(for: test)
+                    .id(runner.currentIndex)
+                    .transition(.opacity)
+                    .animation(.easeInOut(duration: 0.35), value: runner.currentIndex)
             }
         }
         .ignoresSafeArea()
+        .statusBarHidden(true)
+        .persistentSystemOverlays(.hidden)
         .onAppear {
             DisplayManager.shared.setMaxBrightness()
             DisplayManager.shared.disableAutoLock()
-            engine.start(test: test)
+            runner.start()
         }
         .onDisappear {
             DisplayManager.shared.restoreBrightness()
             DisplayManager.shared.enableAutoLock()
-            engine.stop()
+            runner.stop()
+        }
+        .onChange(of: runner.isRunning) { _, running in
+            if !running { dismiss() }
+        }
+        .onTapGesture {
+            // Tap aborts the sequence early.
+            dismiss()
         }
     }
 
     @ViewBuilder
-    private var fullScreenTestView: some View {
+    private func testCanvas(for test: TestDefinition) -> some View {
         switch test.renderer {
         case .fullField:
-            engine.fullFieldView(for: test)
+            test.params.swiftUIColor
                 .ignoresSafeArea()
-                .onTapGesture { endTest() }
         default:
-            // TODO (Session 2): Implement remaining renderer types with Metal.
-            Color.black
-                .ignoresSafeArea()
-                .onTapGesture { endTest() }
+            // TODO (Session 3): Metal renderer for splitQuadrants, grayWedge, etc.
+            Color.black.ignoresSafeArea()
                 .overlay {
-                    Text("Renderer \(test.renderer.rawValue) — kommt in Session 2")
-                        .foregroundStyle(.white)
+                    Text(test.renderer.rawValue)
+                        .font(.system(size: 14, design: .monospaced))
+                        .foregroundStyle(.white.opacity(0.3))
                 }
         }
-    }
-
-    private func endTest() {
-        dismiss()
     }
 }
