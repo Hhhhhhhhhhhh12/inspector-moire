@@ -7,14 +7,18 @@
 	objects = {
 
 /* Begin PBXBuildFile section */
+		1DC56781D262A944D1ECFD21 /* Shaders.metal in Sources */ = {isa = PBXBuildFile; fileRef = A4A377D5ECDAA2B38284B17A /* Shaders.metal */; };
 		263EB4B71B2FD67BBDC9C0FE /* HomeView.swift in Sources */ = {isa = PBXBuildFile; fileRef = BAC2D675F9051E0E7A985CE9 /* HomeView.swift */; };
 		29B39AD4E203CD624E334587 /* TestSequence.swift in Sources */ = {isa = PBXBuildFile; fileRef = 86DD36360A14C7152ABB30F8 /* TestSequence.swift */; };
+		2E4B4CD0366085256DBC934D /* SettingsView.swift in Sources */ = {isa = PBXBuildFile; fileRef = 06C3211E09B8A8F5144B351C /* SettingsView.swift */; };
 		3B65D19B487EAD22871F75DA /* CameraSelectionView.swift in Sources */ = {isa = PBXBuildFile; fileRef = B6C9269D99674046ED5D248B /* CameraSelectionView.swift */; };
 		4E3FDAFB822EF9D46F447C33 /* AppNavigation.swift in Sources */ = {isa = PBXBuildFile; fileRef = C5834DD51A73796F16107A44 /* AppNavigation.swift */; };
+		5FC0599EB25C5013A313B2C3 /* SettingsModel.swift in Sources */ = {isa = PBXBuildFile; fileRef = 8127F59F569DFC31D4A9D918 /* SettingsModel.swift */; };
 		667F65B075240DCC393EF7B8 /* SequenceRunner.swift in Sources */ = {isa = PBXBuildFile; fileRef = 31756CBF7739205F8A732BA3 /* SequenceRunner.swift */; };
 		67F664F5C3ECFCD1A3866445 /* TestEngine.swift in Sources */ = {isa = PBXBuildFile; fileRef = 9A7FD49A604D9B055CBA6C64 /* TestEngine.swift */; };
 		71A2F17422235078C64E2092 /* ModeSelectionView.swift in Sources */ = {isa = PBXBuildFile; fileRef = 09F92CCE248BFD9BFCBF1D4B /* ModeSelectionView.swift */; };
 		7F8311A50F3F067F10D789C3 /* SessionSetupModel.swift in Sources */ = {isa = PBXBuildFile; fileRef = 2EAC7FBAB14AE50721D96458 /* SessionSetupModel.swift */; };
+		80B46C3D68CB0BD1F8EF5E86 /* RenderColorSpace.swift in Sources */ = {isa = PBXBuildFile; fileRef = B5593D60370B7DD8633CBCF5 /* RenderColorSpace.swift */; };
 		8F07F33F362F5021A272D803 /* TestRunnerView.swift in Sources */ = {isa = PBXBuildFile; fileRef = 097B62CD59F890605F885983 /* TestRunnerView.swift */; };
 		9E6A8B5F9213FA03FB88A38E /* CameraProfile.swift in Sources */ = {isa = PBXBuildFile; fileRef = AB17CB2BD5E9FB2767EE0D59 /* CameraProfile.swift */; };
 		A55B91FDC84646769FBEE0A4 /* TestDefinition.swift in Sources */ = {isa = PBXBuildFile; fileRef = A78FAA72907DAA1D2C0DB3AA /* TestDefinition.swift */; };
@@ -23,24 +27,32 @@
 		D6770C8832EE019CC3E4C0FE /* InspektorApp.swift in Sources */ = {isa = PBXBuildFile; fileRef = 2B1347C1690BBD634BFF2D0F /* InspektorApp.swift */; };
 		DE54EF94BD2F944170F144F4 /* ModelView.swift in Sources */ = {isa = PBXBuildFile; fileRef = 1120BDACF7BA7280354FC8B6 /* ModelView.swift */; };
 		E44C664F5F57843F51B22DBF /* PreTestReminderView.swift in Sources */ = {isa = PBXBuildFile; fileRef = BB2E43064BE0357D91350DDC /* PreTestReminderView.swift */; };
+		EA5DFDBEEF8EA6F8EC16C05A /* MetalView.swift in Sources */ = {isa = PBXBuildFile; fileRef = 420BE6F7DFE77CD28F4E69F7 /* MetalView.swift */; };
+		F48D982B09FB66A6DB6A712C /* MetalRenderer.swift in Sources */ = {isa = PBXBuildFile; fileRef = 0C7807BB3AC9BC4CC5792F1E /* MetalRenderer.swift */; };
 		FF888240E7072EB538311CD7 /* DisplayManager.swift in Sources */ = {isa = PBXBuildFile; fileRef = 8C072786C68BCD69A7217EC7 /* DisplayManager.swift */; };
 /* End PBXBuildFile section */
 
 /* Begin PBXFileReference section */
+		06C3211E09B8A8F5144B351C /* SettingsView.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = SettingsView.swift; sourceTree = "<group>"; };
 		097B62CD59F890605F885983 /* TestRunnerView.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = TestRunnerView.swift; sourceTree = "<group>"; };
 		09F92CCE248BFD9BFCBF1D4B /* ModeSelectionView.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = ModeSelectionView.swift; sourceTree = "<group>"; };
+		0C7807BB3AC9BC4CC5792F1E /* MetalRenderer.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = MetalRenderer.swift; sourceTree = "<group>"; };
 		1120BDACF7BA7280354FC8B6 /* ModelView.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = ModelView.swift; sourceTree = "<group>"; };
 		241130A4A29B002703DC5432 /* SessionDetailsView.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = SessionDetailsView.swift; sourceTree = "<group>"; };
 		2B1347C1690BBD634BFF2D0F /* InspektorApp.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = InspektorApp.swift; sourceTree = "<group>"; };
 		2EAC7FBAB14AE50721D96458 /* SessionSetupModel.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = SessionSetupModel.swift; sourceTree = "<group>"; };
 		31756CBF7739205F8A732BA3 /* SequenceRunner.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = SequenceRunner.swift; sourceTree = "<group>"; };
+		420BE6F7DFE77CD28F4E69F7 /* MetalView.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = MetalView.swift; sourceTree = "<group>"; };
 		5BA8D70A533CBBB951373F92 /* InspektorColors.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = InspektorColors.swift; sourceTree = "<group>"; };
 		7462D380EA0F48D5A78405BE /* Inspektor.app */ = {isa = PBXFileReference; includeInIndex = 0; lastKnownFileType = wrapper.application; path = Inspektor.app; sourceTree = BUILT_PRODUCTS_DIR; };
+		8127F59F569DFC31D4A9D918 /* SettingsModel.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = SettingsModel.swift; sourceTree = "<group>"; };
 		86DD36360A14C7152ABB30F8 /* TestSequence.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = TestSequence.swift; sourceTree = "<group>"; };
 		8C072786C68BCD69A7217EC7 /* DisplayManager.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = DisplayManager.swift; sourceTree = "<group>"; };
 		9A7FD49A604D9B055CBA6C64 /* TestEngine.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = TestEngine.swift; sourceTree = "<group>"; };
+		A4A377D5ECDAA2B38284B17A /* Shaders.metal */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.metal; path = Shaders.metal; sourceTree = "<group>"; };
 		A78FAA72907DAA1D2C0DB3AA /* TestDefinition.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = TestDefinition.swift; sourceTree = "<group>"; };
 		AB17CB2BD5E9FB2767EE0D59 /* CameraProfile.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = CameraProfile.swift; sourceTree = "<group>"; };
+		B5593D60370B7DD8633CBCF5 /* RenderColorSpace.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = RenderColorSpace.swift; sourceTree = "<group>"; };
 		B6C9269D99674046ED5D248B /* CameraSelectionView.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = CameraSelectionView.swift; sourceTree = "<group>"; };
 		BAC2D675F9051E0E7A985CE9 /* HomeView.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = HomeView.swift; sourceTree = "<group>"; };
 		BB2E43064BE0357D91350DDC /* PreTestReminderView.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = PreTestReminderView.swift; sourceTree = "<group>"; };
@@ -52,8 +64,13 @@
 			isa = PBXGroup;
 			children = (
 				AB17CB2BD5E9FB2767EE0D59 /* CameraProfile.swift */,
+				0C7807BB3AC9BC4CC5792F1E /* MetalRenderer.swift */,
+				420BE6F7DFE77CD28F4E69F7 /* MetalView.swift */,
+				B5593D60370B7DD8633CBCF5 /* RenderColorSpace.swift */,
 				31756CBF7739205F8A732BA3 /* SequenceRunner.swift */,
 				2EAC7FBAB14AE50721D96458 /* SessionSetupModel.swift */,
+				8127F59F569DFC31D4A9D918 /* SettingsModel.swift */,
+				A4A377D5ECDAA2B38284B17A /* Shaders.metal */,
 				A78FAA72907DAA1D2C0DB3AA /* TestDefinition.swift */,
 				9A7FD49A604D9B055CBA6C64 /* TestEngine.swift */,
 				86DD36360A14C7152ABB30F8 /* TestSequence.swift */,
@@ -67,6 +84,7 @@
 				90DF31E0A7D1B532B68BDB62 /* CameraSelection */,
 				346ABFCC9A0F7DE1C7614AD9 /* Home */,
 				882157569F6CA0BC9D9991B6 /* ModeSelection */,
+				FD4BEE8FE32809E6BFCB0825 /* Settings */,
 				5A7E06B379173A3FE973487A /* TestRunner */,
 			);
 			path = Features;
@@ -168,6 +186,14 @@
 			path = App;
 			sourceTree = "<group>";
 		};
+		FD4BEE8FE32809E6BFCB0825 /* Settings */ = {
+			isa = PBXGroup;
+			children = (
+				06C3211E09B8A8F5144B351C /* SettingsView.swift */,
+			);
+			path = Settings;
+			sourceTree = "<group>";
+		};
 /* End PBXGroup section */
 
 /* Begin PBXNativeTarget section */
@@ -233,12 +259,18 @@
 				263EB4B71B2FD67BBDC9C0FE /* HomeView.swift in Sources */,
 				D6770C8832EE019CC3E4C0FE /* InspektorApp.swift in Sources */,
 				C42815078C2D9FDB25453B65 /* InspektorColors.swift in Sources */,
+				F48D982B09FB66A6DB6A712C /* MetalRenderer.swift in Sources */,
+				EA5DFDBEEF8EA6F8EC16C05A /* MetalView.swift in Sources */,
 				71A2F17422235078C64E2092 /* ModeSelectionView.swift in Sources */,
 				DE54EF94BD2F944170F144F4 /* ModelView.swift in Sources */,
 				E44C664F5F57843F51B22DBF /* PreTestReminderView.swift in Sources */,
+				80B46C3D68CB0BD1F8EF5E86 /* RenderColorSpace.swift in Sources */,
 				667F65B075240DCC393EF7B8 /* SequenceRunner.swift in Sources */,
 				B7F087D44BFF1393E0D23053 /* SessionDetailsView.swift in Sources */,
 				7F8311A50F3F067F10D789C3 /* SessionSetupModel.swift in Sources */,
+				5FC0599EB25C5013A313B2C3 /* SettingsModel.swift in Sources */,
+				2E4B4CD0366085256DBC934D /* SettingsView.swift in Sources */,
+				1DC56781D262A944D1ECFD21 /* Shaders.metal in Sources */,
 				A55B91FDC84646769FBEE0A4 /* TestDefinition.swift in Sources */,
 				67F664F5C3ECFCD1A3866445 /* TestEngine.swift in Sources */,
 				8F07F33F362F5021A272D803 /* TestRunnerView.swift in Sources */,
@@ -265,7 +297,7 @@
 					"$(inherited)",
 					"@executable_path/Frameworks",
 				);
-				MARKETING_VERSION = 0.2.0;
+				MARKETING_VERSION = 0.3.0;
 				PRODUCT_BUNDLE_IDENTIFIER = com.inspektor.app;
 				SDKROOT = iphoneos;
 				SWIFT_EMIT_LOC_STRINGS = YES;
@@ -346,7 +378,7 @@
 					"$(inherited)",
 					"@executable_path/Frameworks",
 				);
-				MARKETING_VERSION = 0.2.0;
+				MARKETING_VERSION = 0.3.0;
 				PRODUCT_BUNDLE_IDENTIFIER = com.inspektor.app;
 				SDKROOT = iphoneos;
 				SWIFT_EMIT_LOC_STRINGS = YES;

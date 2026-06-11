@@ -1,12 +1,14 @@
 {
   "id": "quick_check",
   "name": "Quick-Check On-Set",
-  "estimatedMinutes": 7,
-  "testIds": [
-    "pixel_fullfield_white",
-    "pixel_fullfield_black",
-    "pixel_fullfield_red",
-    "pixel_fullfield_green",
-    "pixel_fullfield_blue"
+  "estimatedMinutes": 1,
+  "steps": [
+    { "testId": "pixel_fullfield_grey50",  "durationOverride": 5 },
+    { "testId": "pixel_fullfield_white",   "durationOverride": 8 },
+    { "testId": "pixel_fullfield_black",   "durationOverride": 8 },
+    { "testId": "pixel_fullfield_red",     "durationOverride": 5 },
+    { "testId": "pixel_fullfield_green",   "durationOverride": 5 },
+    { "testId": "pixel_fullfield_blue",    "durationOverride": 5 },
+    { "testId": "pixel_fullfield_grey50",  "durationOverride": 5 }
   ]
 }

@@ -2,8 +2,9 @@ import SwiftUI
 import UIKit
 
 struct PreTestReminderView: View {
-    @EnvironmentObject private var engine: TestEngine
-    @EnvironmentObject private var setup: SessionSetupModel
+    @EnvironmentObject private var engine:   TestEngine
+    @EnvironmentObject private var setup:    SessionSetupModel
+    @EnvironmentObject private var settings: SettingsModel
     @StateObject private var runner = SequenceRunner()
     @State private var showingTestRunner = false
 
@@ -33,6 +34,7 @@ struct PreTestReminderView: View {
         .fullScreenCover(isPresented: $showingTestRunner) {
             TestRunnerView()
                 .environmentObject(runner)
+                .environmentObject(settings)
         }
     }
 
@@ -116,18 +118,18 @@ struct PreTestReminderView: View {
                 .foregroundStyle(Color.black)
                 .frame(maxWidth: .infinity)
                 .padding(.vertical, 16)
-                .background(runner.tests.isEmpty
+                .background(runner.resolvedTests.isEmpty
                     ? Color.appSecondary
                     : Color.appAccent)
                 .clipShape(RoundedRectangle(cornerRadius: 14))
         }
-        .disabled(runner.tests.isEmpty)
+        .disabled(runner.resolvedTests.isEmpty)
     }
 
     // MARK: - Setup
 
     private func prepareRunner() {
         guard let sequence = engine.sequence(for: setup.selectedMode) else { return }
-        runner.load(testIds: sequence.testIds, definitions: engine.definitions)
+        runner.load(sequence: sequence, definitions: engine.definitions)
     }
 }

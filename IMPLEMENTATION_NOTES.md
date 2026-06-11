@@ -85,3 +85,51 @@ Vollständiger Vor-Test-Flow als NavigationStack-Wizard, von Home bis zum Fullsc
 - **Session 5:** SwiftData Persistenz, SessionManager, PDF-Report
 - History-Tab (Tap auf Mock-Sessions in HomeView navigiert noch nirgendwo hin)
 - Orientation Lock (Test sollte in Portrait locked sein)
+
+---
+
+## Session 3 abgeschlossen — 2026-06-11
+
+### Was wurde gebaut
+
+Metal-Renderer mit Rec.709-legal-Farbraum und DIT-Referenzsequenz.
+
+**Neue Module:**
+- `Core/TestEngine/Shaders.metal` — Vertex + Fragment-Shader für alle 6 Renderer-Typen: fullField, splitQuadrants, splitStripes (H/V), grayWedge, colorPatches. Marker-Typ liefert schwarzes fullField, Text-Overlay via SwiftUI.
+- `Core/TestEngine/RenderColorSpace.swift` — Enum: rec709Legal (Default) / rec709Full / displayP3 mit CGColorSpace-Mapping.
+- `Core/TestEngine/MetalRenderer.swift` — Baut RenderParams-Struct (80 Byte, exakt auf Metal-Layout ausgerichtet), erzeugt MTLRenderPipelineState, rendert on-demand per `render(test:onto:)`.
+- `Core/TestEngine/MetalView.swift` — UIViewRepresentable-Wrapper: MetalUIView (CAMetalLayer als layerClass), re-rendert in layoutSubviews (drawable size) und updateUIView (test/colorspace change).
+- `Core/TestEngine/SettingsModel.swift` — @MainActor ObservableObject mit `colorSpace: RenderColorSpace` (Standard: rec709Legal).
+- `Features/Settings/SettingsView.swift` — Sheet mit Farbraum-Auswahl (3 Optionen) und Hinweis auf Real-Device-Validierung.
+
+**Neue Sequenzen:**
+- `Resources/Sequences/dit_reference.json` — 13 Schritte, 99 Sekunden, 1:1 aus DIT-Referenzclip (BT.709 10-bit, geliefert vom DIT). Sequenz verifiziert gegen CLAUDE.md-Tabelle.
+- `Resources/Sequences/quick_check.json` — 7 Schritte, ~41 Sekunden (Grey Lead-In → W/K/R/G/B → Grey Lead-Out).
+
+**Geänderte Module:**
+- `Core/TestEngine/TestDefinition.swift` — TestParams um color2/3/4, stripeCount, wedgeSteps, orientation, markerText erweitert (alle optional, rückwärtskompatibel).
+- `Core/TestEngine/TestSequence.swift` — SequenceStep-Struct (testId + durationOverride) + TestMode um `.ditReference` erweitert; beide Formate (testIds-Liste und steps-Array) unterstützt.
+- `Core/TestEngine/SequenceRunner.swift` — SequencePhase-Enum (idle/armed/running/paused/done); ResolvedTest-Struct (Definition + effektive Dauer); arm()/triggerStart() für Pre-Roll-Verhalten (DIT setzt Klappe während Lead-In-Grau).
+- `Features/TestRunner/TestRunnerView.swift` — nutzt MetalView statt SwiftUI-Color; zeigt „Tap to Start"-Overlay im armed-State; Tap im running-State bricht ab.
+- `Resources/TestDefinitions/test_definitions.json` — Rec.709-legal-Werte (verifiziert gegen DIT-Clip): White (235/255), Black (16/255), Red (232/255, 16/255, 16/255), Green (16/255, 232/255, 16/255), Blue (16/255, 16/255, 232/255), neu: Grey50 (126/255). durationSeconds auf 10 s erhöht.
+- `App/InspektorApp.swift` + `Features/Home/HomeView.swift` + `Features/TestRunner/PreTestReminderView.swift` — SettingsModel als EnvironmentObject injiziert; Settings-Gear-Button in HomeView.
+
+### Design-Entscheidungen
+
+- **RenderParams als Plain Struct** (keine SIMD-Typen): tuple `(Float, Float, Float, Float)` garantiert identisches Speicherlayout zum Metal `float4` ohne Alignment-Überraschungen in Swift 6.
+- **Render-on-demand** statt DisplayLink: Testbilder sind statisch — ein Aufruf pro Test-Wechsel reicht. Kein 60-fps-Loop nötig, kein CPU-Wakeup zwischen Tests.
+- **CAMetalLayer.colorspace = itur_709** wird gesetzt, keine Gamma-Korrektur im Shader. Werte aus JSON gehen 1:1 ins Framebuffer. Der Kompositor übernimmt die Umrechnung auf die Display-Gamut.
+- **Marker-Renderer**: Metal rendert legal-black Hintergrund, Text wird als SwiftUI-Overlay eingeblendet. Da der Marker ein Trennframe ist (kein Sensor-Test), ist ein SwiftUI-Overlay hier vertretbar.
+- **Pre-Roll / armed-State**: SequenceRunner.arm() zeigt ersten Frame (Grey50), Timer startet erst auf Tap oder späteres Voice-Kommando. DIT hat so Zeit, Klappe zu setzen.
+
+### Offene Punkte (Real-Device-Tests)
+
+- **Color-Space-Verifikation nur auf echtem Gerät**: Simulator verwendet Mac-Farbmanagement und simuliert itur_709 nicht korrekt. Auf iPhone 14 Pro+ muss verifiziert werden, dass RGB(235,235,235) nicht als Clipping erscheint und RGB(16,16,16) nicht als reines Schwarz.
+- **Metal-Download**: Metal Toolchain (688 MB) war nicht installiert, wurde via `xcodebuild -downloadComponent MetalToolchain` nachgeladen. Build-Umgebung ist jetzt vollständig.
+- **Orientation Lock** und LaunchScreen noch offen.
+
+### Nächste Sessions
+
+- **Session 4:** Voice-Layer (`SFSpeechRecognizer`, Wake-Word „Inspector", Active-Test-Modus ohne Wake-Word, Emergency-Befehle)
+- **Session 5:** Apple Watch Companion (WatchConnectivity, PTT, Haptik)
+- **Session 6:** SwiftData-Persistenz, SessionManager, PDF-Report

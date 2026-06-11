@@ -1,14 +1,27 @@
 [
   {
+    "id": "pixel_fullfield_grey50",
+    "name": "Grey 50%",
+    "category": "sensor",
+    "renderer": "fullField",
+    "params": {
+      "color": [0.4941, 0.4941, 0.4941, 1.0],
+      "colorSpace": "rec709Legal"
+    },
+    "durationSeconds": 10,
+    "voiceTriggers": ["grau", "grey", "gray", "fifty percent", "fünfzig prozent"],
+    "appliesTo": ["all"]
+  },
+  {
     "id": "pixel_fullfield_white",
     "name": "Pixel-Test Weiß",
     "category": "sensor",
     "renderer": "fullField",
     "params": {
-      "color": [1.0, 1.0, 1.0, 1.0],
-      "colorSpace": "displayP3"
+      "color": [0.9216, 0.9216, 0.9216, 1.0],
+      "colorSpace": "rec709Legal"
     },
-    "durationSeconds": 8,
+    "durationSeconds": 10,
     "voiceTriggers": ["weiß", "white", "pixel weiß"],
     "appliesTo": ["all"]
   },
@@ -18,10 +31,10 @@
     "category": "sensor",
     "renderer": "fullField",
     "params": {
-      "color": [0.0, 0.0, 0.0, 1.0],
-      "colorSpace": "displayP3"
+      "color": [0.0627, 0.0627, 0.0627, 1.0],
+      "colorSpace": "rec709Legal"
     },
-    "durationSeconds": 8,
+    "durationSeconds": 10,
     "voiceTriggers": ["schwarz", "black", "pixel schwarz"],
     "appliesTo": ["all"]
   },
@@ -31,10 +44,10 @@
     "category": "sensor",
     "renderer": "fullField",
     "params": {
-      "color": [1.0, 0.0, 0.0, 1.0],
-      "colorSpace": "displayP3"
+      "color": [0.9098, 0.0627, 0.0627, 1.0],
+      "colorSpace": "rec709Legal"
     },
-    "durationSeconds": 8,
+    "durationSeconds": 10,
     "voiceTriggers": ["rot", "red"],
     "appliesTo": ["all"]
   },
@@ -44,10 +57,10 @@
     "category": "sensor",
     "renderer": "fullField",
     "params": {
-      "color": [0.0, 1.0, 0.0, 1.0],
-      "colorSpace": "displayP3"
+      "color": [0.0627, 0.9098, 0.0627, 1.0],
+      "colorSpace": "rec709Legal"
     },
-    "durationSeconds": 8,
+    "durationSeconds": 10,
     "voiceTriggers": ["grün", "green"],
     "appliesTo": ["all"]
   },
@@ -57,10 +70,10 @@
     "category": "sensor",
     "renderer": "fullField",
     "params": {
-      "color": [0.0, 0.0, 1.0, 1.0],
-      "colorSpace": "displayP3"
+      "color": [0.0627, 0.0627, 0.9098, 1.0],
+      "colorSpace": "rec709Legal"
     },
-    "durationSeconds": 8,
+    "durationSeconds": 10,
     "voiceTriggers": ["blau", "blue"],
     "appliesTo": ["all"]
   }

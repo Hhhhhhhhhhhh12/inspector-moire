@@ -1,0 +1,20 @@
+{
+  "id": "dit_reference",
+  "name": "DIT-Referenzsequenz",
+  "estimatedMinutes": 2,
+  "steps": [
+    { "testId": "pixel_fullfield_grey50", "durationOverride": 17 },
+    { "testId": "pixel_fullfield_red",    "durationOverride": 12 },
+    { "testId": "pixel_fullfield_green",  "durationOverride": 8  },
+    { "testId": "pixel_fullfield_blue",   "durationOverride": 12 },
+    { "testId": "pixel_fullfield_red",    "durationOverride": 5  },
+    { "testId": "pixel_fullfield_white",  "durationOverride": 5  },
+    { "testId": "pixel_fullfield_green",  "durationOverride": 5  },
+    { "testId": "pixel_fullfield_black",  "durationOverride": 5  },
+    { "testId": "pixel_fullfield_blue",   "durationOverride": 5  },
+    { "testId": "pixel_fullfield_white",  "durationOverride": 5  },
+    { "testId": "pixel_fullfield_grey50", "durationOverride": 4  },
+    { "testId": "pixel_fullfield_black",  "durationOverride": 6  },
+    { "testId": "pixel_fullfield_grey50", "durationOverride": 10 }
+  ]
+}

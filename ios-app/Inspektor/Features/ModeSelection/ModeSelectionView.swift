@@ -1,7 +1,8 @@
 import SwiftUI
 
 struct ModeSelectionView: View {
-    @EnvironmentObject private var setup: SessionSetupModel
+    @EnvironmentObject private var setup:    SessionSetupModel
+    @EnvironmentObject private var settings: SettingsModel
     @Binding var path: [AppNavigation]
 
     var body: some View {

@@ -6,8 +6,8 @@ Hier kommt später das eigentliche Xcode-Projekt rein, sobald die Entwicklung st
 
 ```
 ios-app/
-├── Inspektor.xcodeproj/
-├── Inspektor/                    ← Haupt-App-Target
+├── Inspector Moiré.xcodeproj/
+├── Inspector Moiré/                    ← Haupt-App-Target
 │   ├── App/
 │   ├── Features/
 │   │   ├── Home/
@@ -23,8 +23,8 @@ ios-app/
 │   │   ├── CameraProfiles/      ← JSON-Profile pro Kamera
 │   │   └── TestDefinitions/     ← JSON-Test-Definitionen
 │   └── Assets.xcassets/
-├── InspektorWatch/               ← Apple Watch Companion Target
-└── InspektorTests/               ← Unit Tests
+├── Inspector MoiréWatch/               ← Apple Watch Companion Target
+└── Inspector MoiréTests/               ← Unit Tests
 ```
 
 ## Tech-Stack

@@ -23,9 +23,11 @@ private let mockSessions: [MockSession] = [
 ]
 
 struct HomeView: View {
-    @EnvironmentObject private var engine: TestEngine
-    @EnvironmentObject private var setup: SessionSetupModel
+    @EnvironmentObject private var engine:   TestEngine
+    @EnvironmentObject private var setup:    SessionSetupModel
+    @EnvironmentObject private var settings: SettingsModel
     @State private var path: [AppNavigation] = []
+    @State private var showingSettings = false
 
     var body: some View {
         NavigationStack(path: $path) {
@@ -46,6 +48,10 @@ struct HomeView: View {
                 destinationView(destination)
                     .environmentObject(engine)
                     .environmentObject(setup)
+                    .environmentObject(settings)
+            }
+            .sheet(isPresented: $showingSettings) {
+                SettingsView().environmentObject(settings)
             }
         }
     }
@@ -65,6 +71,12 @@ struct HomeView: View {
                         .foregroundStyle(Color.appSecondary)
                 }
                 Spacer()
+                Button { showingSettings = true } label: {
+                    Image(systemName: "gearshape")
+                        .font(.system(size: 20))
+                        .foregroundStyle(Color.appSecondary)
+                }
+                .padding(.top, 8)
             }
             .padding(.top, 60)
             .padding(.bottom, 32)
