@@ -2,6 +2,8 @@
 
 Vorbereitung: `CLAUDE.md` und `IMPLEMENTATION_NOTES.md` lesen.
 
+**Status: offen / Planung.** Watch-Target und WatchConnectivity sind noch nicht implementiert. Ein hier genannter künftiger Targetname ist ein technischer Platzhalter, keine Entscheidung über den endgültigen App-Namen (siehe `docs/BRAND_WORLD.md`).
+
 ## Aufgabe
 
 Watch-Begleitapp als primäres Eingabegerät während des Tests. Watch hat das Mikrofon nah am Mund und ein Display für visuelles Feedback, während das iPhone vor der Linse hängt.

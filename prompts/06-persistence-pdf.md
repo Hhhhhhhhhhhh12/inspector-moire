@@ -2,6 +2,8 @@
 
 Vorbereitung: `CLAUDE.md` und `IMPLEMENTATION_NOTES.md` lesen.
 
+**Status: offen / Planung.** Es gibt noch keine SwiftData-Sessionpersistenz und keinen PDF-Export. Der endgültige App-Name ist offen; Bezeichnungen im Template sind Platzhalter (siehe `docs/BRAND_WORLD.md`).
+
 ## Aufgabe
 
 Test-Sessions persistent speichern und als professionellen PDF-Report exportierbar machen — für Rental, Insurance, DOP-Dokumentation.
@@ -58,7 +60,7 @@ Modelle in `Core/Persistence/Models/`:
 Template SwiftUI-basiert (rendert SwiftUI-Views in PDF via `ImageRenderer`). Inhalt:
 
 **Header:**
-- Logo/Titel „Inspector Moiré Camera Test Report"
+- Logo/Titel als **Platzhalter**, z. B. „Inspector Moiré Camera Test Report“ — kein freigegebener finaler App-/Reportname
 - Kamera: Hersteller, Modell, Seriennummer
 - Objektiv, Operator
 - Datum, Start- und Endzeit

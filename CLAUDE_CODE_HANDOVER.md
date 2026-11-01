@@ -1,4 +1,6 @@
-# Claude Code — Übergabe
+# Claude Code — Übergabe (historisch)
+
+> **Archivhinweis (Stand 2. November 2026):** Diese frühe Übergabe verwendet eine andere Session-Nummerierung und beschreibt inzwischen erledigte Schritte als Zukunftsplan. Sie ist **kein aktueller Ausführungsauftrag**. Massgeblich sind `IMPLEMENTATION_NOTES.md` (Sessions 0–3 abgeschlossen), `CLAUDE.md`, `prompts/README.md` und der vorhandene Code unter `ios-app/Inspektor/`. Keine erneute Session beginnen, keine ungeprüfte Anleitung direkt auf `main` umsetzen. Die endgültige App-Benennung bleibt offen (`docs/BRAND_WORLD.md`).
 
 Dieses Dokument enthält die Prompts, mit denen du die Inspektor-iOS-App in Claude Code entwickeln lässt. Voraussetzung: Du hast das Repo lokal geklont, hast Claude Code installiert (`npm install -g @anthropic-ai/claude-code`) und Xcode auf einem Mac. Starte Claude Code im Repo-Root mit `claude`.
 
