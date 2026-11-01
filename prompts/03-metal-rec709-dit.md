@@ -1,6 +1,8 @@
 # Session 3 — Metal-Renderer mit Rec.709-legal + DIT-Referenzsequenz
 
-Vorbereitung: `CLAUDE.md` und `IMPLEMENTATION_NOTES.md` lesen.
+**Status: Session 3 laut `IMPLEMENTATION_NOTES.md` am 11. Juni 2026 abgeschlossen.** Dieser Prompt bleibt als historischer Auftrag erhalten und darf nicht ohne ausdrückliche neue Anweisung nochmals ausgeführt werden. Er dokumentiert Sollvorgaben, nicht eine Real-Device-Abnahme; die Rec.709-Ausgabe muss weiterhin auf einem echten iPhone geprüft werden.
+
+Vorbereitung (historisch): `CLAUDE.md` und `IMPLEMENTATION_NOTES.md` lesen.
 
 ## Aufgabe
 
