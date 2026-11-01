@@ -1,4 +1,6 @@
-# Upload zu GitHub — Schritt-für-Schritt
+# Upload zu GitHub — Schritt-für-Schritt (historisch)
+
+> **Archivhinweis (Stand 2. November 2026):** Die Erst-Upload-Anleitung ist erledigt und gilt **nicht** für die weitere Entwicklung. Das bestehende Repository lautet [Hhhhhhhhhhhh12/inspector-moire](https://github.com/Hhhhhhhhhhhh12/inspector-moire), Standardbranch `main`; die Xcode-App ist bereits unter `ios-app/Inspektor/` vorhanden. Die unten stehenden Hinweise zum Neuanlegen des Repositories und zum direkten Commit auf `main` sind **überholt**. Aktuell gilt: eigener Branch, Pull Request, Diff-/Testprüfung und erforderliche Freigabe vor Squash-Merge. Siehe `CLAUDE.md`.
 
 Diese Anleitung führt dich ohne Terminal und ohne Git-Vorkenntnisse durch das Anlegen des öffentlichen Repos und den Upload des Inspektor-Ordners. Du brauchst nur einen Browser und einen GitHub-Account.
 
