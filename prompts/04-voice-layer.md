@@ -2,6 +2,8 @@
 
 Vorbereitung: `CLAUDE.md` und `IMPLEMENTATION_NOTES.md` lesen.
 
+**Status: offen / Planung.** Nicht durch eine Dokumentationskorrektur zur Ausführung freigegeben; vor Beginn vorhandene API und `IMPLEMENTATION_NOTES.md` prüfen.
+
 ## Aufgabe
 
 On-device Spracherkennung implementieren, sodass der DIT die App freihändig steuern kann.
@@ -41,7 +43,7 @@ idle → listening → dictation → idle
 
 Mapping von erkannten Befehlen auf existierende App-Aktionen:
 - „nächster Test" → `SequenceRunner.next()`
-- „start" → `SequenceRunner.startAfterPreRoll()` (löst Pre-Roll-Trigger aus Session 3 aus)
+- „start" → `SequenceRunner.triggerStart()` (vorhandener Pre-Roll-Trigger aus Session 3; nur im `.armed`-Zustand)
 - „fail" → aktuellen Test als Fail markieren
 - usw.
 
