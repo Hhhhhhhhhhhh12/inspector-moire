@@ -2,6 +2,8 @@
 
 Vorbereitung: `CLAUDE.md` und `IMPLEMENTATION_NOTES.md` lesen.
 
+**Status: offen / Planung.** Noch keine freigegebene QA-/TestFlight-Abnahme. Die Markenwelt „Inspector Moiré“ legt den endgültigen App-Namen nicht fest (siehe `docs/BRAND_WORLD.md`). Vor einer späteren Store-Einreichung ist die Namensentscheidung erforderlich.
+
 ## Aufgabe
 
 App für eine TestFlight-Beta-Phase vorbereiten. Code-Qualität sicherstellen, Onboarding bauen, App-Store-Metadaten erstellen.
@@ -45,7 +47,7 @@ In Settings: „Bug melden"-Button öffnet `MFMailComposeViewController` mit:
 ### 5. App-Store-Metadaten
 
 In `marketing/AppStore.md`:
-- App-Name: Inspector Moiré
+- App-Name: **noch offen** (keinen finalen Namen ohne Freigabe einsetzen; „Inspector Moiré“ ist derzeit die Bezeichnung der Markenwelt)
 - Untertitel (max 30 Zeichen): „Pro Camera Sensor Tests"
 - Beschreibung (max 4000 Zeichen, deutsch und englisch)
 - Keywords (kommasepariert, max 100 Zeichen): cinema, camera, dit, sensor, test, arri, red, sony
