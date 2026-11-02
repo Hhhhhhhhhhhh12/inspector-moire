@@ -1,5 +1,7 @@
 # Implementation Notes
 
+> **Dokumentationsnachtrag zur Geräteabnahme · 02.11.2026:** Für die noch offene reale Abnahme von Session 3 liegen ein [Prüfplan](docs/SESSION3_IPHONE_PRUEFPLAN.md) und ein [leeres Ergebnisprotokoll](docs/SESSION3_IPHONE_ERGEBNISPROTOKOLL.md) vor. Dies ist keine neue Entwicklungssession und kein Build-, Laufzeit-, Geräte- oder Messnachweis. Ausgangspunkt ist der im Plan benannte Commit; nach dem laut Nutzerhinweis laufenden UI-Umbau vor Ausführung erneut abgleichen. Vorhandenes Gerät laut Nutzerangabe: iPhone 17 / iOS 27; Messtechnik und genaue Build-Zuordnung bleiben offen. Der Plan unterscheidet Quellenbefunde, visuelle Beobachtung und Messung. Die historischen Session-Einträge bleiben erhalten.
+
 ## Session 0 abgeschlossen — 2026-06-09
 
 - **Repo-URL:** https://github.com/Hhhhhhhhhhhh12/inspector-moire

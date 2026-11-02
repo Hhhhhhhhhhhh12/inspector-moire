@@ -42,4 +42,6 @@ Das Xcode-Projekt wird gemäss `project.yml` mit **xcodegen** definiert (iOS 18.
 
 Die Implementierungsnotizen dokumentieren Session 3 als abgeschlossen und beschreiben DIT-Referenzwerte. **Offen bleibt insbesondere die Prüfung auf einem echten iPhone 14 Pro oder neuer:** Rec.709-Legal-Ausgabe, Weiss-/Schwarz-Clipping, tatsächliche Farbwiedergabe und der Testablauf. Ein Simulator ersetzt diese Messung nicht. Auch Orientation Lock und Launch Screen sind laut Notizen offen.
 
+Für die spätere Geräteabnahme von Session 3: [Prüfplan mit Checkliste](../docs/SESSION3_IPHONE_PRUEFPLAN.md) und [leeres Ergebnisprotokoll](../docs/SESSION3_IPHONE_ERGEBNISPROTOKOLL.md). Beide bereiten die Ausführung vor; sie enthalten keine bestandenen Geräteprüfungen. Vor der Ausführung mit dem Stand nach dem laufenden UI-Umbau abgleichen und den konkreten Prüfungsumfang freigeben. Das vorhandene iPhone 17 mit iOS 27 ist eine Nutzerangabe, noch kein geprüfter Gerätestand.
+
 Für den verbindlichen Implementierungsverlauf siehe [IMPLEMENTATION_NOTES.md](../IMPLEMENTATION_NOTES.md); für geplante weitere Sessions [prompts/README.md](../prompts/README.md). Architektur- und Risikohintergrund: [technisches Konzept](../docs/01_Technisches_Konzept.docx).
