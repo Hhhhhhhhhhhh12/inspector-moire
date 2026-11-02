@@ -25,6 +25,8 @@ Die iOS-App und die Projektdateien tragen aktuell den **Arbeitsnamen „Inspekto
 
 **Offene reale Geräteabnahme:** Farbdarstellung eines iPhone 14 Pro oder neuer (Rec.709-Legal-Weiss 235/Schwarz 16, Clipping, Farbwiedergabe), Laufzeit/Sequenzablauf, Orientierung. Der Simulator bietet keine belastbare farbmetrische Validierung. Orientation Lock und Launch Screen sind weiterhin offen. Die Notizen zur Installation der Metal-Toolchain sind **kein** Ersatz für einen Geräte- oder QA-Nachweis.
 
+**Vorbereitung der Geräteabnahme:** [Prüfplan](docs/SESSION3_IPHONE_PRUEFPLAN.md) und [leeres Ergebnisprotokoll](docs/SESSION3_IPHONE_ERGEBNISPROTOKOLL.md) beziehen sich auf den darin fixierten `main`-Stand. Es wurde dafür keine Geräteprüfung durchgeführt. Laut Nutzerhinweis läuft ein UI-Umbau; vor späterer Ausführung Plan und Bedienwege mit dessen Zielcommit abgleichen. Neue Tests, Builds und Geräteprüfungen bleiben gesondert freizugeben. Das Setting „Rec.709 Full Range“ verwendet im Ausgangscode dieselben RGB-Eingabewerte und dieselbe Farbraumzuordnung wie Legal; eine Range-Umskalierung ist nicht implementiert.
+
 ## Arbeitsregeln für Coding-Agenten
 
 1. **Vor jeder Aufgabe** `IMPLEMENTATION_NOTES.md`, relevanten Swift-Code und die zugehörigen Ressourcen lesen; nach dem aktuellen Stand fragen, wenn Dokumentation und Code widersprechen. Keine früheren Sessions erneut ausführen.
